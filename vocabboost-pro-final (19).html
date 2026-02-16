@@ -1,0 +1,4587 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VocabBoost PRO - Le système ultime ! 🚀</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <style>
+        :root {
+            --bg-primary: #fef8ff;
+            --bg-secondary: #ffffff;
+            --bg-card: #ffffff;
+            --accent-primary: #ff6b9d;
+            --accent-secondary: #c084fc;
+            --accent-tertiary: #fbbf24;
+            --accent-success: #34d399;
+            --accent-blue: #60a5fa;
+            --accent-review: #fb923c;
+            --text-primary: #1f2937;
+            --text-secondary: #6b7280;
+            --text-muted: #9ca3af;
+            --shadow-sm: 0 2px 8px rgba(255, 107, 157, 0.15);
+            --shadow-md: 0 8px 24px rgba(255, 107, 157, 0.25);
+            --shadow-lg: 0 20px 40px rgba(255, 107, 157, 0.3);
+            --gradient-1: linear-gradient(135deg, #ff6b9d 0%, #c084fc 100%);
+            --gradient-2: linear-gradient(135deg, #fbbf24 0%, #f97316 100%);
+            --gradient-3: linear-gradient(135deg, #60a5fa 0%, #c084fc 100%);
+            --gradient-4: linear-gradient(135deg, #34d399 0%, #10b981 100%);
+            --gradient-review: linear-gradient(135deg, #fb923c 0%, #fbbf24 100%);
+        }
+
+        [data-theme="dark"] {
+            --bg-primary: #0f0f1e;
+            --bg-secondary: #1a1a2e;
+            --bg-card: #16213e;
+            --text-primary: #e2e8f0;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+        }
+
+        [data-theme="ocean"] {
+            --bg-primary: #f0f9ff;
+            --bg-secondary: #ffffff;
+            --bg-card: #ffffff;
+            --accent-primary: #0ea5e9;
+            --accent-secondary: #06b6d4;
+            --accent-tertiary: #22d3ee;
+            --accent-success: #10b981;
+            --accent-blue: #3b82f6;
+            --accent-review: #f59e0b;
+            --text-primary: #0c4a6e;
+            --text-secondary: #475569;
+            --text-muted: #94a3b8;
+            --shadow-sm: 0 2px 8px rgba(14, 165, 233, 0.15);
+            --shadow-md: 0 8px 24px rgba(14, 165, 233, 0.25);
+            --shadow-lg: 0 20px 40px rgba(14, 165, 233, 0.3);
+            --gradient-1: linear-gradient(135deg, #0ea5e9 0%, #06b6d4 100%);
+            --gradient-2: linear-gradient(135deg, #f59e0b 0%, #f97316 100%);
+            --gradient-3: linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%);
+            --gradient-4: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            --gradient-review: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
+        }
+
+        [data-theme="forest"] {
+            --bg-primary: #f0fdf4;
+            --bg-secondary: #ffffff;
+            --bg-card: #ffffff;
+            --accent-primary: #22c55e;
+            --accent-secondary: #10b981;
+            --accent-tertiary: #84cc16;
+            --accent-success: #34d399;
+            --accent-blue: #14b8a6;
+            --accent-review: #fb923c;
+            --text-primary: #14532d;
+            --text-secondary: #475569;
+            --text-muted: #94a3b8;
+            --shadow-sm: 0 2px 8px rgba(34, 197, 94, 0.15);
+            --shadow-md: 0 8px 24px rgba(34, 197, 94, 0.25);
+            --shadow-lg: 0 20px 40px rgba(34, 197, 94, 0.3);
+            --gradient-1: linear-gradient(135deg, #22c55e 0%, #10b981 100%);
+            --gradient-2: linear-gradient(135deg, #84cc16 0%, #65a30d 100%);
+            --gradient-3: linear-gradient(135deg, #14b8a6 0%, #10b981 100%);
+            --gradient-4: linear-gradient(135deg, #34d399 0%, #10b981 100%);
+            --gradient-review: linear-gradient(135deg, #fb923c 0%, #fbbf24 100%);
+        }
+
+        [data-theme="sunset"] {
+            --bg-primary: #fff7ed;
+            --bg-secondary: #ffffff;
+            --bg-card: #ffffff;
+            --accent-primary: #f97316;
+            --accent-secondary: #fb923c;
+            --accent-tertiary: #fbbf24;
+            --accent-success: #34d399;
+            --accent-blue: #60a5fa;
+            --accent-review: #fb923c;
+            --text-primary: #7c2d12;
+            --text-secondary: #78716c;
+            --text-muted: #a8a29e;
+            --shadow-sm: 0 2px 8px rgba(249, 115, 22, 0.15);
+            --shadow-md: 0 8px 24px rgba(249, 115, 22, 0.25);
+            --shadow-lg: 0 20px 40px rgba(249, 115, 22, 0.3);
+            --gradient-1: linear-gradient(135deg, #f97316 0%, #fb923c 100%);
+            --gradient-2: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+            --gradient-3: linear-gradient(135deg, #fb923c 0%, #f97316 100%);
+            --gradient-4: linear-gradient(135deg, #34d399 0%, #10b981 100%);
+            --gradient-review: linear-gradient(135deg, #fb923c 0%, #fbbf24 100%);
+        }
+
+        [data-theme="midnight"] {
+            --bg-primary: #0c0a1d;
+            --bg-secondary: #1a1625;
+            --bg-card: #1a1625;
+            --accent-primary: #a78bfa;
+            --accent-secondary: #8b5cf6;
+            --accent-tertiary: #c084fc;
+            --accent-success: #34d399;
+            --accent-blue: #60a5fa;
+            --accent-review: #fb923c;
+            --text-primary: #e9d5ff;
+            --text-secondary: #c4b5fd;
+            --text-muted: #a78bfa;
+            --shadow-sm: 0 2px 8px rgba(167, 139, 250, 0.2);
+            --shadow-md: 0 8px 24px rgba(167, 139, 250, 0.3);
+            --shadow-lg: 0 20px 40px rgba(167, 139, 250, 0.4);
+            --gradient-1: linear-gradient(135deg, #a78bfa 0%, #8b5cf6 100%);
+            --gradient-2: linear-gradient(135deg, #c084fc 0%, #a78bfa 100%);
+            --gradient-3: linear-gradient(135deg, #60a5fa 0%, #8b5cf6 100%);
+            --gradient-4: linear-gradient(135deg, #34d399 0%, #10b981 100%);
+            --gradient-review: linear-gradient(135deg, #fb923c 0%, #fbbf24 100%);
+        }
+
+        [data-theme="rose"] {
+            --bg-primary: #fff1f2;
+            --bg-secondary: #ffffff;
+            --bg-card: #ffffff;
+            --accent-primary: #f43f5e;
+            --accent-secondary: #fb7185;
+            --accent-tertiary: #fda4af;
+            --accent-success: #34d399;
+            --accent-blue: #60a5fa;
+            --accent-review: #fb923c;
+            --text-primary: #881337;
+            --text-secondary: #78716c;
+            --text-muted: #a8a29e;
+            --shadow-sm: 0 2px 8px rgba(244, 63, 94, 0.15);
+            --shadow-md: 0 8px 24px rgba(244, 63, 94, 0.25);
+            --shadow-lg: 0 20px 40px rgba(244, 63, 94, 0.3);
+            --gradient-1: linear-gradient(135deg, #f43f5e 0%, #fb7185 100%);
+            --gradient-2: linear-gradient(135deg, #fda4af 0%, #fb7185 100%);
+            --gradient-3: linear-gradient(135deg, #fb7185 0%, #f43f5e 100%);
+            --gradient-4: linear-gradient(135deg, #34d399 0%, #10b981 100%);
+            --gradient-review: linear-gradient(135deg, #fb923c 0%, #fbbf24 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            min-height: 100vh;
+            transition: all 0.3s ease;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(255, 107, 157, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(192, 132, 252, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(251, 191, 36, 0.05) 0%, transparent 50%);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .decoration {
+            position: fixed;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.6;
+            filter: blur(60px);
+            animation: float 15s infinite ease-in-out;
+        }
+
+        .decoration-1 {
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(135deg, #ff6b9d, #fbbf24);
+            top: -100px;
+            right: -100px;
+        }
+
+        .decoration-2 {
+            width: 250px;
+            height: 250px;
+            background: linear-gradient(135deg, #60a5fa, #c084fc);
+            bottom: -80px;
+            left: -80px;
+            animation-delay: 5s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(30px, -30px) scale(1.1); }
+            66% { transform: translate(-30px, 30px) scale(0.9); }
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Header avec streak */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding: 1.5rem 2.5rem;
+            background: var(--bg-secondary);
+            border-radius: 24px;
+            box-shadow: var(--shadow-sm);
+            position: relative;
+            gap: 2rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-1);
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            transform: rotate(-8deg);
+            box-shadow: var(--shadow-md);
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: rotate(-8deg) translateY(0); }
+            50% { transform: rotate(-8deg) translateY(-5px); }
+        }
+
+        .logo h1 {
+            font-size: 2rem;
+            font-weight: 900;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header-stats {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .stat {
+            text-align: center;
+            padding: 0.5rem 1rem;
+            background: linear-gradient(135deg, rgba(255, 107, 157, 0.1), rgba(192, 132, 252, 0.1));
+            border-radius: 16px;
+        }
+
+        .stat-value {
+            font-size: 1.8rem;
+            font-weight: 900;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-label {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+            margin-top: 0.2rem;
+        }
+
+        .streak-badge {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.8rem 1.5rem;
+            background: var(--gradient-2);
+            border-radius: 16px;
+            color: white;
+            font-weight: 700;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .streak-icon {
+            font-size: 1.5rem;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .theme-toggle {
+            padding: 0.8rem;
+            background: var(--bg-primary);
+            border: 2px solid rgba(255, 107, 157, 0.2);
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 1.3rem;
+            transition: all 0.3s ease;
+        }
+
+        .theme-toggle:hover {
+            transform: rotate(180deg);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .minigames-btn {
+            padding: 0.8rem 1.5rem;
+            background: var(--gradient-2);
+            border: none;
+            border-radius: 12px;
+            color: white;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .minigames-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .anki-switcher-btn {
+            padding: 0.8rem 1.5rem;
+            background: var(--gradient-3);
+            border: none;
+            border-radius: 12px;
+            color: white;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            box-shadow: var(--shadow-sm);
+            position: relative;
+        }
+
+        .anki-switcher-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .anki-badge {
+            background: rgba(255, 255, 255, 0.3);
+            padding: 0.2rem 0.5rem;
+            border-radius: 8px;
+            font-size: 0.75rem;
+            font-weight: 800;
+        }
+
+        .anki-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .anki-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem;
+            background: linear-gradient(135deg, rgba(255, 107, 157, 0.1), rgba(192, 132, 252, 0.1));
+            border-radius: 16px;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .anki-item:hover {
+            border-color: var(--accent-primary);
+            transform: translateX(5px);
+        }
+
+        .anki-item.active {
+            background: var(--gradient-1);
+            color: white;
+            border-color: transparent;
+        }
+
+        .anki-item-info {
+            flex: 1;
+        }
+
+        .anki-item-name {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+        }
+
+        .anki-item-stats {
+            font-size: 0.85rem;
+            opacity: 0.8;
+        }
+
+        .anki-item-actions {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .btn-icon {
+            padding: 0.6rem;
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-icon:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.1);
+        }
+
+        .anki-item.active .btn-icon {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+        }
+
+        .minigames-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .minigame-card {
+            background: var(--bg-card);
+            padding: 2rem;
+            border-radius: 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-sm);
+            border: 2px solid transparent;
+        }
+
+        .minigame-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--accent-primary);
+        }
+
+        .minigame-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .minigame-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .minigame-desc {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .game-container {
+            background: var(--bg-card);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow-sm);
+            text-align: center;
+        }
+
+        .game-area {
+            margin: 2rem 0;
+            min-height: 300px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .game-question {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            padding: 2rem;
+            background: linear-gradient(135deg, rgba(255, 107, 157, 0.1), rgba(192, 132, 252, 0.1));
+            border-radius: 16px;
+        }
+
+        .game-options {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .game-option {
+            padding: 1.5rem;
+            background: var(--bg-secondary);
+            border: 2px solid rgba(255, 107, 157, 0.2);
+            border-radius: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .game-option:hover {
+            border-color: var(--accent-primary);
+            transform: scale(1.05);
+        }
+
+        .game-option.correct {
+            background: var(--gradient-4);
+            color: white;
+            border-color: transparent;
+        }
+
+        .game-option.wrong {
+            background: linear-gradient(135deg, #ef4444, #dc2626);
+            color: white;
+            border-color: transparent;
+        }
+
+        .game-stats {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: linear-gradient(135deg, rgba(255, 107, 157, 0.1), rgba(192, 132, 252, 0.1));
+            border-radius: 16px;
+        }
+
+        .game-stat {
+            text-align: center;
+        }
+
+        .game-stat-value {
+            font-size: 2rem;
+            font-weight: 900;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .game-stat-label {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            font-weight: 600;
+        }
+
+        .memory-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .memory-card {
+            aspect-ratio: 1;
+            background: var(--gradient-1);
+            border-radius: 12px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .memory-card.flipped {
+            background: var(--bg-secondary);
+            border: 2px solid var(--accent-primary);
+        }
+
+        .memory-card.matched {
+            background: var(--gradient-4);
+            pointer-events: none;
+        }
+
+        .typing-input {
+            width: 100%;
+            max-width: 500px;
+            padding: 1rem 1.5rem;
+            border: 2px solid rgba(255, 107, 157, 0.2);
+            border-radius: 12px;
+            font-size: 1.2rem;
+            font-family: 'Poppins', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            text-align: center;
+        }
+
+        .typing-input:focus {
+            outline: none;
+            border-color: var(--accent-primary);
+            box-shadow: 0 0 0 3px rgba(255, 107, 157, 0.1);
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            gap: 0.8rem;
+            margin-bottom: 2rem;
+            background: var(--bg-secondary);
+            padding: 0.8rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow-sm);
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            flex: 1;
+            min-width: 120px;
+            padding: 1rem 1.2rem;
+            background: transparent;
+            color: var(--text-secondary);
+            border: none;
+            border-radius: 14px;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 700;
+            transition: all 0.3s ease;
+        }
+
+        .nav-btn:hover {
+            color: var(--text-primary);
+            transform: translateY(-2px);
+        }
+
+        .nav-btn.active {
+            background: var(--gradient-1);
+            color: white;
+            box-shadow: var(--shadow-md);
+        }
+
+        /* Views */
+        .view {
+            display: none;
+        }
+
+        .view.active {
+            display: block;
+            animation: fadeIn 0.2s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Library Layout avec Sidebar */
+        .library-layout {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 2rem;
+        }
+
+        .collections-sidebar {
+            background: var(--bg-secondary);
+            border-radius: 24px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 2rem;
+            max-height: calc(100vh - 4rem);
+            overflow-y: auto;
+        }
+
+        .sidebar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid rgba(255, 107, 157, 0.1);
+        }
+
+        .sidebar-header h3 {
+            font-size: 1.2rem;
+            font-weight: 800;
+        }
+
+        .collection-item, .deck-item {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 0.8rem 1rem;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-bottom: 0.5rem;
+        }
+
+        .collection-item:hover, .deck-item:hover {
+            background: linear-gradient(135deg, rgba(255, 107, 157, 0.1), rgba(192, 132, 252, 0.1));
+            transform: translateX(5px);
+        }
+
+        .collection-item.active, .deck-item.active {
+            background: var(--gradient-1);
+            color: white;
+            font-weight: 700;
+        }
+
+        .collection-icon {
+            font-size: 1.5rem;
+        }
+
+        .collection-info {
+            flex: 1;
+        }
+
+        .collection-name {
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+
+        .collection-count {
+            font-size: 0.75rem;
+            opacity: 0.8;
+        }
+
+        .sidebar-section {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 2px solid rgba(255, 107, 157, 0.1);
+        }
+
+        .sidebar-section h4 {
+            font-size: 0.9rem;
+            font-weight: 800;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            margin-bottom: 0.8rem;
+        }
+
+        /* Cards Header */
+        .cards-header {
+            margin-bottom: 2rem;
+        }
+
+        .header-left {
+            margin-bottom: 1.5rem;
+        }
+
+        .library-title {
+            font-size: 2rem;
+            font-weight: 900;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.3rem;
+        }
+
+        .library-subtitle {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .header-right {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .search-box {
+            flex: 1;
+            min-width: 250px;
+            padding: 1rem 1.5rem;
+            background: var(--bg-secondary);
+            border: 2px solid rgba(255, 107, 157, 0.2);
+            border-radius: 16px;
+            color: var(--text-primary);
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .search-box:focus {
+            outline: none;
+            border-color: var(--accent-primary);
+            box-shadow: 0 0 0 4px rgba(255, 107, 157, 0.1);
+        }
+
+        .btn-primary {
+            padding: 1rem 2.5rem;
+            background: var(--gradient-1);
+            border: none;
+            border-radius: 16px;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Cards Grid */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card-item {
+            background: var(--bg-card);
+            border-radius: 20px;
+            padding: 1.8rem;
+            transition: all 0.4s ease;
+            box-shadow: var(--shadow-sm);
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient-1);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .card-item:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+            border-color: rgba(255, 107, 157, 0.3);
+        }
+
+        .card-item:hover::before {
+            transform: scaleX(1);
+        }
+
+        .card-front {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+            line-height: 1.4;
+        }
+
+        .card-back {
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.2rem;
+            line-height: 1.6;
+        }
+
+        .card-meta {
+            display: flex;
+            gap: 0.6rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.2rem;
+        }
+
+        .deck-badge {
+            padding: 0.4rem 1rem;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            background: linear-gradient(135deg, rgba(96, 165, 250, 0.15), rgba(96, 165, 250, 0.25));
+            border: 2px solid rgba(96, 165, 250, 0.3);
+            color: #2563eb;
+        }
+
+        .card-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.4rem 1rem;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .status-not-mastered {
+            background: linear-gradient(135deg, rgba(96, 165, 250, 0.15), rgba(96, 165, 250, 0.25));
+            color: #3b82f6;
+        }
+
+        .status-reviewing {
+            background: linear-gradient(135deg, rgba(251, 146, 60, 0.15), rgba(251, 146, 60, 0.25));
+            color: #ea580c;
+        }
+
+        .status-mastered {
+            background: linear-gradient(135deg, rgba(52, 211, 153, 0.15), rgba(52, 211, 153, 0.25));
+            color: #10b981;
+        }
+
+        .card-actions {
+            display: flex;
+            gap: 0.6rem;
+        }
+
+        .btn-small {
+            flex: 1;
+            padding: 0.7rem 1rem;
+            background: linear-gradient(135deg, rgba(255, 107, 157, 0.1), rgba(192, 132, 252, 0.1));
+            border: 2px solid rgba(255, 107, 157, 0.2);
+            border-radius: 12px;
+            color: var(--text-primary);
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-small:hover {
+            border-color: var(--accent-primary);
+            transform: translateY(-2px);
+        }
+
+        .btn-danger {
+            background: linear-gradient(135deg, rgba(239, 68, 68, 0.1), rgba(239, 68, 68, 0.2));
+            border-color: rgba(239, 68, 68, 0.3);
+            color: #dc2626;
+        }
+
+        /* Training Layout */
+        .training-layout {
+            display: grid;
+            grid-template-columns: 260px 1fr 260px;
+            gap: 1.5rem;
+            align-items: start;
+        }
+
+        .training-sidebar {
+            background: var(--bg-secondary);
+            border-radius: 20px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 2rem;
+        }
+
+        .training-sidebar h3 {
+            font-size: 1rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .category-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .category-item {
+            padding: 0.8rem 1rem;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .category-item:hover {
+            background: linear-gradient(135deg, rgba(255, 107, 157, 0.1), rgba(192, 132, 252, 0.1));
+            transform: translateX(5px);
+        }
+
+        .category-item.active {
+            background: var(--gradient-1);
+            color: white;
+        }
+
+        .category-icon {
+            font-size: 1.2rem;
+        }
+
+        .category-count {
+            margin-left: auto;
+            font-size: 0.8rem;
+            opacity: 0.8;
+            position: relative;
+        }
+
+        .count-animation {
+            position: absolute;
+            right: -30px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-weight: 900;
+            font-size: 1rem;
+            pointer-events: none;
+            animation: countPop 1s ease forwards;
+        }
+
+        .count-animation.positive {
+            color: #10b981;
+        }
+
+        .count-animation.negative {
+            color: #ef4444;
+        }
+
+        @keyframes countPop {
+            0% {
+                opacity: 1;
+                transform: translateY(-50%) scale(1);
+            }
+            50% {
+                transform: translateY(-70%) scale(1.3);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-90%) scale(0.8);
+            }
+        }
+
+        .filter-sidebar {
+            background: var(--bg-secondary);
+            border-radius: 20px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 2rem;
+        }
+
+        .filter-sidebar h3 {
+            font-size: 1rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .filter-options {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .filter-item {
+            padding: 0.8rem 1rem;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-weight: 600;
+            font-size: 0.9rem;
+            border: 2px solid transparent;
+        }
+
+        .filter-item:hover {
+            border-color: rgba(255, 107, 157, 0.3);
+            transform: translateX(-5px);
+        }
+
+        .filter-item.active {
+            border-color: var(--accent-primary);
+            background: linear-gradient(135deg, rgba(255, 107, 157, 0.1), rgba(192, 132, 252, 0.1));
+        }
+
+        .filter-item.filter-all.active {
+            background: var(--gradient-1);
+            color: white;
+            border-color: transparent;
+        }
+
+        .filter-item.filter-not-mastered.active {
+            background: linear-gradient(135deg, rgba(96, 165, 250, 0.15), rgba(96, 165, 250, 0.25));
+            color: #3b82f6;
+            border-color: #60a5fa;
+        }
+
+        .filter-item.filter-reviewing.active {
+            background: linear-gradient(135deg, rgba(251, 146, 60, 0.15), rgba(251, 146, 60, 0.25));
+            color: #ea580c;
+            border-color: #fb923c;
+        }
+
+        .filter-item.filter-mastered.active {
+            background: linear-gradient(135deg, rgba(52, 211, 153, 0.15), rgba(52, 211, 153, 0.25));
+            color: #10b981;
+            border-color: #34d399;
+        }
+
+        .training-center {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .training-info {
+            text-align: center;
+            color: var(--text-secondary);
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .cards-list-view {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            max-height: 50vh;
+            overflow-y: auto;
+            padding: 0.5rem 0;
+            margin-top: 1rem;
+        }
+
+        .list-card-item {
+            background: var(--bg-primary);
+            padding: 1rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .list-card-item:hover {
+            transform: translateX(-3px);
+            box-shadow: var(--shadow-md);
+            border-color: rgba(255, 107, 157, 0.3);
+        }
+
+        .list-card-front {
+            font-weight: 700;
+            font-size: 0.95rem;
+            margin-bottom: 0.3rem;
+            color: var(--text-primary);
+        }
+
+        .list-card-back {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.8rem;
+        }
+
+        .list-card-actions {
+            display: flex;
+            gap: 0.4rem;
+        }
+
+        .list-card-actions button {
+            flex: 1;
+            padding: 0.5rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .list-card-actions button:hover {
+            transform: translateY(-2px);
+        }
+
+        .filter-section-divider {
+            margin: 1.5rem 0;
+            border-top: 2px solid rgba(255, 107, 157, 0.1);
+        }
+
+        .flashcard {
+            width: 100%;
+            margin: 0 auto;
+            perspective: 1000px;
+        }
+
+        .flashcard-inner {
+            position: relative;
+            width: 100%;
+            min-height: 500px;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            cursor: pointer;
+        }
+
+        .flashcard-inner.flipped {
+            transform: rotateY(180deg);
+        }
+
+        .flashcard-front, .flashcard-back {
+            position: absolute;
+            width: 100%;
+            min-height: 500px;
+            backface-visibility: hidden;
+            border-radius: 24px;
+            padding: 3.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-lg);
+            background: var(--bg-secondary);
+        }
+
+        .flashcard-back {
+            transform: rotateY(180deg);
+            background: linear-gradient(135deg, rgba(255, 107, 157, 0.05), rgba(192, 132, 252, 0.05));
+        }
+
+        .flashcard-content {
+            font-size: 2.2rem;
+            font-weight: 700;
+            text-align: center;
+            word-wrap: break-word;
+            max-width: 100%;
+            line-height: 1.4;
+        }
+
+        .flashcard-hint {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-top: 1rem;
+            text-align: center;
+        }
+
+        .flashcard-status-badge {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            padding: 0.5rem 1rem;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .flashcard-status-not-mastered {
+            background: linear-gradient(135deg, rgba(96, 165, 250, 0.9), rgba(96, 165, 250, 1));
+            color: white;
+        }
+
+        .flashcard-status-reviewing {
+            background: linear-gradient(135deg, rgba(251, 146, 60, 0.9), rgba(251, 146, 60, 1));
+            color: white;
+        }
+
+        .flashcard-status-mastered {
+            background: linear-gradient(135deg, rgba(52, 211, 153, 0.9), rgba(52, 211, 153, 1));
+            color: white;
+        }
+
+        .training-nav {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+
+        .flashcard-controls {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-review {
+            padding: 0.9rem 2rem;
+            background: var(--gradient-review);
+            border: none;
+            border-radius: 14px;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-review:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-success {
+            background: var(--gradient-4);
+            color: white;
+            padding: 0.9rem 2rem;
+            border: none;
+            border-radius: 14px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary {
+            padding: 0.9rem 2rem;
+            background: rgba(255, 107, 157, 0.1);
+            border: 2px solid rgba(255, 107, 157, 0.2);
+            border-radius: 14px;
+            color: var(--accent-primary);
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 107, 157, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        /* Animations pour les boutons de notation */
+        @keyframes buttonClick {
+            0% { transform: scale(1); }
+            50% { transform: scale(0.95); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes successPulse {
+            0%, 100% { box-shadow: var(--shadow-md); }
+            50% { box-shadow: 0 0 30px rgba(52, 211, 153, 0.6); }
+        }
+
+        @keyframes reviewPulse {
+            0%, 100% { box-shadow: var(--shadow-md); }
+            50% { box-shadow: 0 0 30px rgba(251, 146, 60, 0.6); }
+        }
+
+        @keyframes errorPulse {
+            0%, 100% { box-shadow: var(--shadow-md); }
+            50% { box-shadow: 0 0 30px rgba(239, 68, 68, 0.6); }
+        }
+
+        .btn-clicked {
+            animation: buttonClick 0.3s ease;
+        }
+
+        .btn-success.btn-clicked {
+            animation: buttonClick 0.3s ease, successPulse 0.6s ease;
+        }
+
+        .btn-review.btn-clicked {
+            animation: buttonClick 0.3s ease, reviewPulse 0.6s ease;
+        }
+
+        .btn-danger.btn-clicked {
+            animation: buttonClick 0.3s ease, errorPulse 0.6s ease;
+        }
+
+        @keyframes cardSlideOut {
+            0% {
+                opacity: 1;
+                transform: translateX(0) scale(1);
+            }
+            100% {
+                opacity: 0;
+                transform: translateX(100px) scale(0.9);
+            }
+        }
+
+        @keyframes cardSlideIn {
+            0% {
+                opacity: 0;
+                transform: translateX(-100px) scale(0.9);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0) scale(1);
+            }
+        }
+
+        .flashcard.slide-out {
+            animation: cardSlideOut 0.4s ease forwards;
+        }
+
+        .flashcard.slide-in {
+            animation: cardSlideIn 0.4s ease forwards;
+        }
+
+        /* Dashboard Stats */
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: var(--bg-secondary);
+            border-radius: 24px;
+            padding: 2rem;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient-1);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .stat-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .stat-card-title {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+        }
+
+        .stat-card-icon {
+            font-size: 2rem;
+        }
+
+        .stat-card-value {
+            font-size: 3rem;
+            font-weight: 900;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-card-label {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            font-weight: 600;
+        }
+
+        .chart-container {
+            background: var(--bg-secondary);
+            border-radius: 24px;
+            padding: 2rem;
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 2rem;
+        }
+
+        .chart-title {
+            font-size: 1.3rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Calendar */
+        .calendar-container {
+            background: var(--bg-secondary);
+            border-radius: 24px;
+            padding: 2rem;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .calendar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .calendar-title {
+            font-size: 1.5rem;
+            font-weight: 800;
+        }
+
+        .calendar-nav {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .calendar-nav-btn {
+            padding: 0.5rem 1rem;
+            background: var(--bg-primary);
+            border: 2px solid rgba(255, 107, 157, 0.2);
+            border-radius: 12px;
+            cursor: pointer;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .calendar-nav-btn:hover {
+            border-color: var(--accent-primary);
+            transform: scale(1.05);
+        }
+
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 0.5rem;
+        }
+
+        .calendar-day-header {
+            text-align: center;
+            font-weight: 700;
+            color: var(--text-secondary);
+            padding: 0.5rem;
+            font-size: 0.85rem;
+        }
+
+        .calendar-day {
+            aspect-ratio: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: var(--bg-primary);
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 0.5rem;
+        }
+
+        .calendar-day:hover {
+            transform: scale(1.05);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .calendar-day.today {
+            background: var(--gradient-1);
+            color: white;
+            font-weight: 900;
+        }
+
+        .calendar-day.studied {
+            background: var(--gradient-4);
+            color: white;
+        }
+
+        .calendar-day-number {
+            font-size: 0.95rem;
+            font-weight: 700;
+        }
+
+        .calendar-day-count {
+            font-size: 0.7rem;
+            margin-top: 0.2rem;
+            opacity: 0.8;
+        }
+
+        /* Achievements */
+        .achievements-section {
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+        }
+
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .achievement-card {
+            background: var(--bg-secondary);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .achievement-card.locked {
+            opacity: 0.6;
+            filter: grayscale(1);
+        }
+
+        .achievement-card:not(.locked):hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: var(--shadow-md);
+        }
+
+        .achievement-card.earned {
+            border: 2px solid var(--accent-success);
+        }
+
+        .achievement-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .achievement-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .achievement-desc {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .achievement-progress {
+            margin-top: 1rem;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: rgba(255, 107, 157, 0.2);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-top: 0.5rem;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: var(--gradient-1);
+            transition: width 0.5s ease;
+        }
+
+        .progress-text {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            margin-top: 0.5rem;
+        }
+
+        .badge-stats {
+            background: rgba(255, 107, 157, 0.1);
+            padding: 1rem;
+            border-radius: 12px;
+            margin-top: 1rem;
+            font-size: 0.85rem;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            animation: fadeInFast 0.15s ease;
+        }
+
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background: var(--bg-secondary);
+            padding: 3rem;
+            border-radius: 24px;
+            max-width: 600px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: var(--shadow-lg);
+            animation: popIn 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        @keyframes fadeInFast {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes popIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .modal-header h2 {
+            font-size: 1.8rem;
+            font-weight: 800;
+        }
+
+        .modal-close {
+            font-size: 2rem;
+            cursor: pointer;
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            transition: all 0.3s ease;
+        }
+
+        .modal-close:hover {
+            color: var(--accent-primary);
+            transform: rotate(90deg);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.9rem 1.2rem;
+            border: 2px solid rgba(255, 107, 157, 0.2);
+            border-radius: 12px;
+            font-size: 1rem;
+            font-family: 'Poppins', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent-primary);
+            box-shadow: 0 0 0 3px rgba(255, 107, 157, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        /* Alert */
+        .alert {
+            position: fixed;
+            top: 2rem;
+            right: 2rem;
+            max-width: 400px;
+            background: var(--bg-secondary);
+            padding: 1.5rem 2rem;
+            border-radius: 16px;
+            box-shadow: var(--shadow-lg);
+            z-index: 2000;
+            animation: slideInRight 0.4s ease;
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .alert-header {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .alert-icon {
+            font-size: 1.5rem;
+        }
+
+        .alert-title {
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .alert-message {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-left: 2.3rem;
+            white-space: pre-line;
+        }
+
+        .alert.success {
+            border-left: 4px solid var(--accent-success);
+        }
+
+        .alert.error {
+            border-left: 4px solid #ef4444;
+        }
+
+        /* Settings */
+        .settings-card {
+            background: var(--bg-secondary);
+            border-radius: 24px;
+            padding: 2rem;
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 2rem;
+        }
+
+        .settings-card h3 {
+            font-size: 1.3rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .library-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .collections-sidebar {
+                position: static;
+                max-height: none;
+            }
+
+            .training-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .training-sidebar, .filter-sidebar {
+                position: static;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            header {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1.5rem;
+            }
+
+            .header-stats {
+                flex-direction: column;
+                gap: 1rem;
+                width: 100%;
+            }
+
+            nav {
+                flex-direction: column;
+            }
+
+            .nav-btn {
+                width: 100%;
+            }
+
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .dashboard-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .flashcard-content {
+                font-size: 1.5rem;
+            }
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-primary);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--gradient-1);
+            border-radius: 6px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--accent-primary);
+        }
+    </style>
+</head>
+<body data-theme="light">
+    <div class="decoration decoration-1"></div>
+    <div class="decoration decoration-2"></div>
+
+    <div class="container">
+        <header>
+            <div class="logo">
+                <div class="logo-icon">🚀</div>
+                <div>
+                    <h1>VocabBoost PRO</h1>
+                </div>
+            </div>
+            
+            <button class="anki-switcher-btn" onclick="openAnkiSwitcher()">
+                <span>📚</span>
+                <span id="currentAnkiName">Mon Anki</span>
+                <span class="anki-badge" id="ankiCount">1</span>
+            </button>
+
+            <button class="minigames-btn" onclick="openMinigamesModal()">
+                🎮 Mini-jeux
+            </button>
+
+            <div class="header-stats">
+                <div class="stat">
+                    <div class="stat-value" id="totalCards">0</div>
+                    <div class="stat-label">Cartes</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value" id="masteredCards">0</div>
+                    <div class="stat-label">Maîtrisées</div>
+                </div>
+                <div class="streak-badge">
+                    <span class="streak-icon">🔥</span>
+                    <span id="streakCount">0</span> jours
+                </div>
+                <button class="theme-toggle" id="themeToggle">🌙</button>
+            </div>
+        </header>
+
+        <nav>
+            <button class="nav-btn active" data-view="dashboard">📊 Tableau de bord</button>
+            <button class="nav-btn" data-view="training">🎯 Entraînement</button>
+            <button class="nav-btn" data-view="library">📚 Bibliothèque</button>
+            <button class="nav-btn" data-view="calendar">📅 Calendrier</button>
+            <button class="nav-btn" data-view="achievements">🏆 Succès</button>
+            <button class="nav-btn" data-view="settings">⚙️ Paramètres</button>
+        </nav>
+
+        <!-- Dashboard View -->
+        <div id="dashboard" class="view active">
+            <div class="dashboard-grid">
+                <div class="stat-card">
+                    <div class="stat-card-header">
+                        <span class="stat-card-title">Objectif du jour</span>
+                        <span class="stat-card-icon">🎯</span>
+                    </div>
+                    <div class="stat-card-value" id="todayCount">0</div>
+                    <div class="stat-card-label" id="todayLabel">cartes aujourd'hui</div>
+                    <div class="progress-bar" style="margin-top: 1rem;">
+                        <div class="progress-fill" id="todayProgress" style="width: 0%"></div>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-card-header">
+                        <span class="stat-card-title">Taux de maîtrise</span>
+                        <span class="stat-card-icon">📈</span>
+                    </div>
+                    <div class="stat-card-value" id="masteryRate">0%</div>
+                    <div class="stat-card-label">cartes maîtrisées</div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-card-header">
+                        <span class="stat-card-title">En révision</span>
+                        <span class="stat-card-icon">🔄</span>
+                    </div>
+                    <div class="stat-card-value" id="reviewCount">0</div>
+                    <div class="stat-card-label">cartes à revoir</div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-card-header">
+                        <span class="stat-card-title">Total étudié</span>
+                        <span class="stat-card-icon">📚</span>
+                    </div>
+                    <div class="stat-card-value" id="totalStudied">0</div>
+                    <div class="stat-card-label">cartes au total</div>
+                </div>
+            </div>
+
+            <div class="chart-container">
+                <h3 class="chart-title">📊 Progression sur 7 jours</h3>
+                <canvas id="weekChart" height="80"></canvas>
+            </div>
+
+            <button class="btn-primary" style="width: 100%; font-size: 1.2rem; padding: 1.5rem;" onclick="switchView('training')">
+                🚀 Commencer l'entraînement
+            </button>
+        </div>
+
+        <!-- Training View -->
+        <div id="training" class="view">
+            <div class="training-layout">
+                <!-- Sidebar gauche - Catégories -->
+                <aside class="training-sidebar">
+                    <h3>📚 Catégories</h3>
+                    <div class="category-list" id="categoryList"></div>
+                </aside>
+
+                <!-- Centre - Flashcard -->
+                <main class="training-center">
+                    <div id="trainingContent"></div>
+                </main>
+
+                <!-- Sidebar droite - Filtres -->
+                <aside class="filter-sidebar">
+                    <h3>🎯 Filtres</h3>
+                    <div class="filter-options">
+                        <div class="filter-item filter-all active" data-filter="all" onclick="selectFilter('all')">
+                            <span>📚</span>
+                            <span>Toutes</span>
+                            <span class="category-count" id="filterAllCount">0</span>
+                        </div>
+                        <div class="filter-item filter-not-mastered" data-filter="not-mastered" onclick="selectFilter('not-mastered')">
+                            <span>📖</span>
+                            <span>Non maîtrisées</span>
+                            <span class="category-count" id="filterNotMasteredCount">0</span>
+                        </div>
+                        <div class="filter-item filter-reviewing" data-filter="reviewing" onclick="selectFilter('reviewing')">
+                            <span>🔄</span>
+                            <span>En révision</span>
+                            <span class="category-count" id="filterReviewingCount">0</span>
+                        </div>
+                        <div class="filter-item filter-mastered" data-filter="mastered" onclick="selectFilter('mastered')">
+                            <span>✅</span>
+                            <span>Maîtrisées</span>
+                            <span class="category-count" id="filterMasteredCount">0</span>
+                        </div>
+                    </div>
+
+                    <div class="filter-section-divider"></div>
+
+                    <h3>📋 Vue rapide</h3>
+                    <div id="quickCardsList" class="cards-list-view"></div>
+                </aside>
+            </div>
+        </div>
+
+        <!-- Library View -->
+        <div id="library" class="view">
+            <div class="library-layout">
+                <aside class="collections-sidebar">
+                    <div class="sidebar-header">
+                        <h3>📁 Collections</h3>
+                    </div>
+
+                    <div class="collection-item active" data-filter="all" onclick="filterLibrary('all')">
+                        <span class="collection-icon">📚</span>
+                        <div class="collection-info">
+                            <div class="collection-name">Toutes les cartes</div>
+                            <div class="collection-count" id="allCount">0 cartes</div>
+                        </div>
+                    </div>
+
+                    <div class="collection-item" data-filter="mastered" onclick="filterLibrary('mastered')">
+                        <span class="collection-icon">✅</span>
+                        <div class="collection-info">
+                            <div class="collection-name">Maîtrisées</div>
+                            <div class="collection-count" id="masteredCount">0 cartes</div>
+                        </div>
+                    </div>
+
+                    <div class="collection-item" data-filter="reviewing" onclick="filterLibrary('reviewing')">
+                        <span class="collection-icon">🔄</span>
+                        <div class="collection-info">
+                            <div class="collection-name">En révision</div>
+                            <div class="collection-count" id="reviewingCount">0 cartes</div>
+                        </div>
+                    </div>
+
+                    <div class="collection-item" data-filter="not-mastered" onclick="filterLibrary('not-mastered')">
+                        <span class="collection-icon">📖</span>
+                        <div class="collection-info">
+                            <div class="collection-name">Non maîtrisées</div>
+                            <div class="collection-count" id="notMasteredCount">0 cartes</div>
+                        </div>
+                    </div>
+
+                    <div class="sidebar-section">
+                        <h4>📚 Catégories</h4>
+                        <div id="decksSidebar"></div>
+                    </div>
+                </aside>
+
+                <main>
+                    <div class="cards-header">
+                        <div class="header-left">
+                            <h2 class="library-title" id="libraryTitle">Toutes les cartes</h2>
+                            <p class="library-subtitle" id="librarySubtitle">0 cartes</p>
+                        </div>
+                        <div class="header-right">
+                            <input type="text" class="search-box" id="searchBox" placeholder="🔍 Rechercher une carte...">
+                            <button class="btn-primary" onclick="openAddCardModal()">+ Ajouter</button>
+                        </div>
+                    </div>
+
+                    <div class="cards-grid" id="cardsGrid"></div>
+                </main>
+            </div>
+        </div>
+
+        <!-- Calendar View -->
+        <div id="calendar" class="view">
+            <div class="calendar-container">
+                <div class="calendar-header">
+                    <h2 class="calendar-title" id="calendarMonth"></h2>
+                    <div class="calendar-nav">
+                        <button class="calendar-nav-btn" onclick="previousMonth()">◀ Précédent</button>
+                        <button class="calendar-nav-btn" onclick="nextMonth()">Suivant ▶</button>
+                    </div>
+                </div>
+                <div class="calendar-grid" id="calendarGrid"></div>
+            </div>
+        </div>
+
+        <!-- Achievements View -->
+        <div id="achievements" class="view">
+            <div class="achievements-section">
+                <h2 class="section-title">🏆 Badges par Catégorie</h2>
+                <div class="achievements-grid" id="categoryBadges"></div>
+            </div>
+
+            <div class="achievements-section">
+                <h2 class="section-title">⭐ Achievements Généraux</h2>
+                <div class="achievements-grid" id="achievementsList"></div>
+            </div>
+        </div>
+
+        <!-- Settings View -->
+        <div id="settings" class="view">
+            <div class="settings-card">
+                <h3>⚙️ Paramètres généraux</h3>
+                
+                <div class="form-group">
+                    <label>Objectif quotidien</label>
+                    <input type="number" id="goalInput" min="1" max="100" value="20">
+                    <button class="btn-primary" style="margin-top: 1rem;" onclick="updateGoal()">Mettre à jour</button>
+                </div>
+            </div>
+
+            <div class="settings-card">
+                <h3>📚 Gérer les catégories</h3>
+                
+                <div style="display: flex; gap: 0.5rem; margin-bottom: 1.5rem;">
+                    <input type="text" id="newDeckInput" placeholder="Nouvelle catégorie" style="flex: 1; padding: 0.9rem 1.2rem; border: 2px solid rgba(255, 107, 157, 0.2); border-radius: 12px; font-family: 'Poppins', sans-serif;">
+                    <button class="btn-primary" onclick="addDeck()">Ajouter</button>
+                </div>
+                
+                <div id="decksList"></div>
+            </div>
+
+            <div class="settings-card">
+                <h3>💾 Données</h3>
+                <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                    <button class="btn-secondary" id="exportBtn">📥 Exporter</button>
+                    <button class="btn-secondary" id="importBtn">📤 Importer (Remplacer)</button>
+                    <button class="btn-secondary" id="importAddBtn">➕ Importer (Ajouter)</button>
+                </div>
+                <div style="margin-top: 2rem; padding: 1.5rem; background: rgba(239, 68, 68, 0.1); border-radius: 16px; border: 2px solid rgba(239, 68, 68, 0.3);">
+                    <h4 style="color: #dc2626; margin-bottom: 1rem; font-size: 1.1rem; font-weight: 700;">⚠️ Zone dangereuse</h4>
+                    <p style="color: var(--text-secondary); margin-bottom: 1rem; font-size: 0.9rem;">Cette action supprimera toutes les cartes de l'Anki actuel uniquement.</p>
+                    <button class="btn-danger" id="resetBtn" style="width: 100%;">🗑️ Supprimer toutes les cartes</button>
+                </div>
+                <input type="file" id="importFile" accept=".json" style="display: none;">
+                <input type="file" id="importAddFile" accept=".json" style="display: none;">
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Card Modal -->
+    <div id="addCardModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>✨ Nouvelle Carte</h2>
+                <button class="modal-close" onclick="closeAddCardModal()">×</button>
+            </div>
+            <form onsubmit="addCard(event)">
+                <div class="form-group">
+                    <label>Recto (Question)</label>
+                    <textarea id="cardFront" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Verso (Réponse)</label>
+                    <textarea id="cardBack" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Catégorie</label>
+                    <select id="cardDeck" required></select>
+                </div>
+                <button type="submit" class="btn-primary" style="width: 100%;">Ajouter</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Edit Card Modal -->
+    <div id="editCardModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>✏️ Modifier la Carte</h2>
+                <button class="modal-close" onclick="closeEditCardModal()">×</button>
+            </div>
+            <form onsubmit="saveEditCard(event)">
+                <div class="form-group">
+                    <label>Recto</label>
+                    <textarea id="editCardFront" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Verso</label>
+                    <textarea id="editCardBack" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Catégorie</label>
+                    <select id="editCardDeck" required></select>
+                </div>
+                <div class="form-group">
+                    <label>Statut</label>
+                    <select id="editCardStatus" required>
+                        <option value="not-mastered">📖 Non maîtrisé</option>
+                        <option value="reviewing">🔄 En révision</option>
+                        <option value="mastered">✅ Maîtrisé</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-primary" style="width: 100%; margin-top: 1rem;">Sauvegarder</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Minigames Modal -->
+    <div id="minigamesModal" class="modal">
+        <div class="modal-content" style="max-width: 900px;">
+            <div class="modal-header">
+                <h2>🎮 Mini-jeux</h2>
+                <button class="modal-close" onclick="closeMinigamesModal()">×</button>
+            </div>
+            <div id="minigamesContent">
+                <div class="minigames-grid">
+                    <div class="minigame-card" onclick="startQuizGame()">
+                        <div class="minigame-icon">🎯</div>
+                        <h3 class="minigame-title">Quiz</h3>
+                        <p class="minigame-desc">Réponds aux questions avec 4 choix</p>
+                    </div>
+                    <div class="minigame-card" onclick="startMemoryGame()">
+                        <div class="minigame-icon">🧠</div>
+                        <h3 class="minigame-title">Memory</h3>
+                        <p class="minigame-desc">Trouve les paires de cartes</p>
+                    </div>
+                    <div class="minigame-card" onclick="startTypingGame()">
+                        <div class="minigame-icon">⌨️</div>
+                        <h3 class="minigame-title">Speed Typing</h3>
+                        <p class="minigame-desc">Tape la réponse le plus vite possible</p>
+                    </div>
+                    <div class="minigame-card" onclick="startTrueFalseGame()">
+                        <div class="minigame-icon">✅❌</div>
+                        <h3 class="minigame-title">Vrai ou Faux</h3>
+                        <p class="minigame-desc">Décide si la réponse est correcte</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Anki Switcher Modal -->
+    <div id="ankiSwitcherModal" class="modal">
+        <div class="modal-content" style="max-width: 700px;">
+            <div class="modal-header">
+                <h2>📚 Mes Ankis</h2>
+                <button class="modal-close" onclick="closeAnkiSwitcher()">×</button>
+            </div>
+            
+            <button class="btn-primary" style="width: 100%; margin-bottom: 1.5rem;" onclick="createNewAnki()">
+                ✨ Créer un nouvel Anki
+            </button>
+
+            <div class="anki-list" id="ankiList"></div>
+        </div>
+    </div>
+
+    <script>
+        // ============================================================================
+        // STATE
+        // ============================================================================
+        
+        let ankis = [];
+        let currentAnkiId = null;
+        
+        let cards = [];
+        let decks = ['Général'];
+        let studyStats = {
+            today: 0,
+            total: 0,
+            last7Days: [0, 0, 0, 0, 0, 0, 0],
+            streak: 0,
+            lastStudyDate: null
+        };
+        let studyHistory = {};
+        let dailyGoal = 20;
+        let currentView = 'dashboard';
+        let currentCardIndex = 0;
+        let currentEditingCard = null;
+        let selectedCategory = 'all';
+        let selectedStatusFilter = 'all';
+        let trainingDeck = [];
+        let trainingViewMode = 'card'; // 'card' ou 'list'
+        let currentLibraryFilter = 'all';
+        let currentDeckFilter = null;
+        let searchQuery = '';
+
+        // Category badges
+        let categoryBadges = {};
+
+        // Achievements
+        let achievements = [
+            { id: 'first-card', title: 'Première Carte', description: 'Crée ta première carte', icon: '🎯', progress: 0, target: 1 },
+            { id: 'first-study', title: 'Premier Apprentissage', description: 'Étudie ta première carte', icon: '📖', progress: 0, target: 1 },
+            { id: 'streak-3', title: 'Série de 3', description: 'Étudie 3 jours d\'affilée', icon: '🔥', progress: 0, target: 3 },
+            { id: 'streak-7', title: 'Série de 7', description: 'Étudie 7 jours d\'affilée', icon: '⚡', progress: 0, target: 7 },
+            { id: 'streak-30', title: 'Série de 30', description: 'Étudie 30 jours d\'affilée', icon: '💎', progress: 0, target: 30 },
+            { id: 'master-10', title: 'Maître 10', description: 'Maîtrise 10 cartes', icon: '⭐', progress: 0, target: 10 },
+            { id: 'master-50', title: 'Maître 50', description: 'Maîtrise 50 cartes', icon: '🌟', progress: 0, target: 50 },
+            { id: 'master-100', title: 'Maître 100', description: 'Maîtrise 100 cartes', icon: '✨', progress: 0, target: 100 },
+            { id: 'cards-100', title: 'Collectionneur', description: 'Crée 100 cartes', icon: '📚', progress: 0, target: 100 },
+            { id: 'total-500', title: 'Studieux', description: 'Étudie 500 cartes au total', icon: '🎓', progress: 0, target: 500 }
+        ];
+
+        // ============================================================================
+        // PERSISTENCE
+        // ============================================================================
+        
+        function saveData() {
+            if (!currentAnkiId) return;
+            
+            const currentTheme = document.body.getAttribute('data-theme');
+            
+            const ankiData = {
+                cards,
+                decks,
+                stats: studyStats,
+                history: studyHistory,
+                goal: dailyGoal,
+                achievements: achievements,
+                categoryBadges: categoryBadges,
+                theme: currentTheme
+            };
+            
+            localStorage.setItem(`vocabboost_anki_${currentAnkiId}`, JSON.stringify(ankiData));
+            
+            // Sauvegarder la liste des Ankis
+            localStorage.setItem('vocabboost_ankis', JSON.stringify(ankis));
+            localStorage.setItem('vocabboost_current_anki', currentAnkiId);
+        }
+
+        function loadData() {
+            if (!currentAnkiId) return;
+            
+            const savedData = localStorage.getItem(`vocabboost_anki_${currentAnkiId}`);
+            
+            if (savedData) {
+                const data = JSON.parse(savedData);
+                cards = data.cards || [];
+                // S'assurer que toutes les cartes ont un statut
+                let needsSave = false;
+                cards = cards.map(card => {
+                    if (!card.status) {
+                        needsSave = true;
+                        return { ...card, status: 'not-mastered' };
+                    }
+                    return card;
+                });
+                
+                if (needsSave) {
+                    localStorage.setItem(`vocabboost_anki_${currentAnkiId}`, JSON.stringify({...data, cards}));
+                }
+                
+                decks = data.decks || ['Général'];
+                studyStats = data.stats || { today: 0, total: 0, last7Days: [0,0,0,0,0,0,0], streak: 0, lastStudyDate: null };
+                studyHistory = data.history || {};
+                dailyGoal = data.goal || 20;
+                achievements = data.achievements || achievements;
+                categoryBadges = data.categoryBadges || {};
+                
+                // Charger le thème de cet Anki
+                if (data.theme) {
+                    applyTheme(data.theme);
+                }
+                
+                updateStreak();
+            } else {
+                // Initialiser un nouvel Anki vide
+                cards = [];
+                decks = ['Général'];
+                studyStats = { today: 0, total: 0, last7Days: [0,0,0,0,0,0,0], streak: 0, lastStudyDate: null };
+                studyHistory = {};
+                dailyGoal = 20;
+                achievements.forEach(a => a.progress = 0);
+                categoryBadges = {};
+                
+                // Thème par défaut pour nouvel Anki
+                applyTheme('light');
+            }
+
+            document.getElementById('goalInput').value = dailyGoal;
+        }
+
+        function loadAnkis() {
+            const savedAnkis = localStorage.getItem('vocabboost_ankis');
+            const savedCurrentAnki = localStorage.getItem('vocabboost_current_anki');
+            
+            if (savedAnkis) {
+                ankis = JSON.parse(savedAnkis);
+            }
+            
+            // Si aucun Anki n'existe, en créer un par défaut
+            if (ankis.length === 0) {
+                const defaultAnki = {
+                    id: Date.now().toString(),
+                    name: 'Mon Anki',
+                    createdAt: new Date().toISOString()
+                };
+                ankis.push(defaultAnki);
+                currentAnkiId = defaultAnki.id;
+            } else {
+                currentAnkiId = savedCurrentAnki || ankis[0].id;
+            }
+            
+            updateAnkiUI();
+            loadData();
+        }
+
+        function updateAnkiUI() {
+            const currentAnki = ankis.find(a => a.id === currentAnkiId);
+            if (currentAnki) {
+                document.getElementById('currentAnkiName').textContent = currentAnki.name;
+            }
+            document.getElementById('ankiCount').textContent = ankis.length;
+        }
+
+        function validateCard(card) {
+            if (!card.front || !card.back || !card.deck) return null;
+            return {
+                id: card.id || Date.now().toString() + Math.random().toString(36).substr(2, 9),
+                front: card.front,
+                back: card.back,
+                deck: card.deck,
+                status: card.status || 'not-mastered',
+                createdAt: card.createdAt || new Date().toISOString(),
+                lastReviewed: card.lastReviewed || null,
+                reviewCount: card.reviewCount || 0
+            };
+        }
+
+        function updateStreak() {
+            const today = new Date().toDateString();
+            const yesterday = new Date(Date.now() - 86400000).toDateString();
+
+            if (studyStats.lastStudyDate === today) {
+                return;
+            }
+
+            if (studyStats.lastStudyDate === yesterday) {
+                // Streak continues
+            } else if (studyStats.lastStudyDate !== today) {
+                studyStats.streak = 0;
+            }
+        }
+
+        // ============================================================================
+        // NAVIGATION
+        // ============================================================================
+        
+        function switchView(viewName) {
+            document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+            document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+            
+            document.getElementById(viewName).classList.add('active');
+            document.querySelector(`[data-view="${viewName}"]`).classList.add('active');
+            
+            currentView = viewName;
+
+            if (viewName === 'dashboard') updateDashboard();
+            else if (viewName === 'training') startTraining();
+            else if (viewName === 'library') renderLibrary();
+            else if (viewName === 'calendar') renderCalendar();
+            else if (viewName === 'achievements') renderAchievements();
+            else if (viewName === 'settings') renderSettings();
+        }
+
+        document.querySelectorAll('.nav-btn').forEach(btn => {
+            btn.addEventListener('click', () => switchView(btn.dataset.view));
+        });
+
+        // ============================================================================
+        // THEME TOGGLE
+        // ============================================================================
+        
+        const themes = [
+            { name: 'light', icon: '🌸', label: 'Rose' },
+            { name: 'dark', icon: '🌙', label: 'Sombre' },
+            { name: 'ocean', icon: '🌊', label: 'Océan' },
+            { name: 'forest', icon: '🌲', label: 'Forêt' },
+            { name: 'sunset', icon: '🌅', label: 'Coucher de soleil' },
+            { name: 'midnight', icon: '🌌', label: 'Minuit' },
+            { name: 'rose', icon: '🌹', label: 'Rose foncé' }
+        ];
+        
+        let currentThemeIndex = 0;
+        
+        function applyTheme(themeName) {
+            const themeIndex = themes.findIndex(t => t.name === themeName);
+            if (themeIndex !== -1) {
+                currentThemeIndex = themeIndex;
+                document.body.setAttribute('data-theme', themeName);
+                document.getElementById('themeToggle').textContent = themes[themeIndex].icon;
+            }
+        }
+        
+        document.getElementById('themeToggle').addEventListener('click', () => {
+            currentThemeIndex = (currentThemeIndex + 1) % themes.length;
+            const theme = themes[currentThemeIndex];
+            
+            applyTheme(theme.name);
+            
+            // Sauvegarder le thème dans l'Anki actuel
+            saveData();
+            
+            // Petit effet de notification
+            showThemeNotification(theme.label);
+        });
+
+        function showThemeNotification(themeName) {
+            const notification = document.createElement('div');
+            notification.style.cssText = `
+                position: fixed;
+                top: 6rem;
+                right: 2rem;
+                background: var(--bg-card);
+                padding: 1rem 1.5rem;
+                border-radius: 12px;
+                box-shadow: var(--shadow-lg);
+                z-index: 2000;
+                font-weight: 600;
+                animation: slideInRight 0.3s ease;
+            `;
+            notification.textContent = `🎨 Thème : ${themeName}`;
+            document.body.appendChild(notification);
+            
+            setTimeout(() => notification.remove(), 2000);
+        }
+
+        // Charger le thème initial (sera remplacé par loadData)
+        applyTheme('light');
+
+        // ============================================================================
+        // DASHBOARD
+        // ============================================================================
+        
+        let weekChart = null;
+
+        function updateDashboard() {
+            const today = studyStats.today;
+            const progress = Math.min((today / dailyGoal) * 100, 100);
+            
+            document.getElementById('todayCount').textContent = today;
+            document.getElementById('todayProgress').style.width = `${progress}%`;
+            document.getElementById('todayLabel').textContent = `sur ${dailyGoal} cartes`;
+
+            const masteredCount = cards.filter(c => c.status === 'mastered').length;
+            const reviewingCount = cards.filter(c => c.status === 'reviewing').length;
+            const masteryRate = cards.length > 0 ? Math.round((masteredCount / cards.length) * 100) : 0;
+            
+            document.getElementById('masteryRate').textContent = `${masteryRate}%`;
+            document.getElementById('reviewCount').textContent = reviewingCount;
+            document.getElementById('totalStudied').textContent = studyStats.total;
+
+            // Week Chart
+            const ctx = document.getElementById('weekChart');
+            if (ctx) {
+                if (weekChart) weekChart.destroy();
+                
+                weekChart = new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: ['J-6', 'J-5', 'J-4', 'J-3', 'J-2', 'Hier', 'Aujourd\'hui'],
+                        datasets: [{
+                            label: 'Cartes étudiées',
+                            data: studyStats.last7Days,
+                            borderColor: '#ff6b9d',
+                            backgroundColor: 'rgba(255, 107, 157, 0.1)',
+                            tension: 0.4,
+                            fill: true,
+                            pointRadius: 5,
+                            pointHoverRadius: 7
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: true,
+                        plugins: {
+                            legend: { display: false }
+                        },
+                        scales: {
+                            y: { 
+                                beginAtZero: true, 
+                                ticks: { stepSize: 1 }
+                            }
+                        }
+                    }
+                });
+            }
+        }
+
+        // ============================================================================
+        // TRAINING
+        // ============================================================================
+        
+        function startTraining() {
+            renderCategoryList();
+            updateFilterCounts();
+            updateTrainingDeck();
+        }
+
+        function renderCategoryList() {
+            const container = document.getElementById('categoryList');
+            
+            const allItem = `
+                <div class="category-item active" data-category="all" onclick="selectCategory('all')">
+                    <span class="category-icon">📚</span>
+                    <span>Toutes</span>
+                    <span class="category-count">${cards.length}</span>
+                </div>
+            `;
+            
+            const deckItems = decks.map(deck => {
+                const count = cards.filter(c => c.deck === deck).length;
+                return `
+                    <div class="category-item" data-category="${deck}" onclick="selectCategory('${deck}')">
+                        <span class="category-icon">📁</span>
+                        <span>${deck}</span>
+                        <span class="category-count">${count}</span>
+                    </div>
+                `;
+            }).join('');
+            
+            container.innerHTML = allItem + deckItems;
+        }
+
+        function updateFilterCounts(previousCounts = null) {
+            let categoryCards = selectedCategory === 'all' ? cards : cards.filter(c => c.deck === selectedCategory);
+            
+            const newCounts = {
+                all: categoryCards.length,
+                notMastered: categoryCards.filter(c => c.status === 'not-mastered').length,
+                reviewing: categoryCards.filter(c => c.status === 'reviewing').length,
+                mastered: categoryCards.filter(c => c.status === 'mastered').length
+            };
+            
+            // Mettre à jour les compteurs
+            document.getElementById('filterAllCount').textContent = newCounts.all;
+            document.getElementById('filterNotMasteredCount').textContent = newCounts.notMastered;
+            document.getElementById('filterReviewingCount').textContent = newCounts.reviewing;
+            document.getElementById('filterMasteredCount').textContent = newCounts.mastered;
+            
+            // Animations si on a les anciens compteurs
+            if (previousCounts) {
+                if (newCounts.notMastered !== previousCounts.notMastered) {
+                    showCountAnimation('filterNotMasteredCount', newCounts.notMastered - previousCounts.notMastered);
+                }
+                if (newCounts.reviewing !== previousCounts.reviewing) {
+                    showCountAnimation('filterReviewingCount', newCounts.reviewing - previousCounts.reviewing);
+                }
+                if (newCounts.mastered !== previousCounts.mastered) {
+                    showCountAnimation('filterMasteredCount', newCounts.mastered - previousCounts.mastered);
+                }
+            }
+            
+            return newCounts;
+        }
+
+        function showCountAnimation(elementId, diff) {
+            const element = document.getElementById(elementId);
+            if (!element || diff === 0) return;
+            
+            const animation = document.createElement('span');
+            animation.className = `count-animation ${diff > 0 ? 'positive' : 'negative'}`;
+            animation.textContent = diff > 0 ? `+${diff}` : diff;
+            
+            element.style.position = 'relative';
+            element.appendChild(animation);
+            
+            setTimeout(() => animation.remove(), 1000);
+        }
+
+        function selectCategory(category) {
+            selectedCategory = category;
+            document.querySelectorAll('.category-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            document.querySelector(`.category-item[data-category="${category}"]`)?.classList.add('active');
+            updateFilterCounts();
+            updateTrainingDeck();
+        }
+
+        function selectFilter(filter) {
+            selectedStatusFilter = filter;
+            document.querySelectorAll('.filter-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            document.querySelector(`.filter-item[data-filter="${filter}"]`)?.classList.add('active');
+            updateTrainingDeck();
+        }
+
+        function updateTrainingDeck() {
+            // Filter by category
+            let filteredCards = selectedCategory === 'all' ? [...cards] : cards.filter(c => c.deck === selectedCategory);
+            
+            // Filter by status
+            if (selectedStatusFilter === 'not-mastered') {
+                filteredCards = filteredCards.filter(c => c.status === 'not-mastered');
+            } else if (selectedStatusFilter === 'reviewing') {
+                filteredCards = filteredCards.filter(c => c.status === 'reviewing');
+            } else if (selectedStatusFilter === 'mastered') {
+                filteredCards = filteredCards.filter(c => c.status === 'mastered');
+            }
+            
+            trainingDeck = filteredCards;
+            currentCardIndex = 0;
+            
+            if (trainingDeck.length === 0) {
+                document.getElementById('trainingContent').innerHTML = `
+                    <div class="stat-card" style="text-align: center; padding: 4rem;">
+                        <div style="font-size: 4rem; margin-bottom: 1rem;">📭</div>
+                        <h2 style="margin-bottom: 1rem;">Aucune carte disponible</h2>
+                        <p style="color: var(--text-secondary); margin-bottom: 2rem;">
+                            ${selectedCategory === 'all' ? 'Commence par ajouter des cartes !' : 'Cette sélection est vide.'}
+                        </p>
+                        <button class="btn-primary" onclick="switchView('library')">Aller à la bibliothèque</button>
+                    </div>
+                `;
+                document.getElementById('quickCardsList').innerHTML = '';
+            } else {
+                renderTrainingCard();
+                renderQuickCardsList();
+            }
+        }
+
+        function renderQuickCardsList() {
+            const container = document.getElementById('quickCardsList');
+            
+            if (trainingDeck.length === 0) {
+                container.innerHTML = '<p style="text-align: center; color: var(--text-muted); font-size: 0.85rem;">Aucune carte</p>';
+                return;
+            }
+            
+            container.innerHTML = trainingDeck.map(card => {
+                let statusBadgeClass = '';
+                let statusIcon = '';
+                if (card.status === 'mastered') {
+                    statusBadgeClass = 'status-mastered';
+                    statusIcon = '✅';
+                } else if (card.status === 'reviewing') {
+                    statusBadgeClass = 'status-reviewing';
+                    statusIcon = '🔄';
+                } else {
+                    statusBadgeClass = 'status-not-mastered';
+                    statusIcon = '📖';
+                }
+                
+                return `
+                    <div class="list-card-item">
+                        <div class="card-status ${statusBadgeClass}" style="display: inline-block; font-size: 0.75rem; padding: 0.3rem 0.6rem; margin-bottom: 0.5rem;">${statusIcon}</div>
+                        <div class="list-card-front">${card.front}</div>
+                        <div class="list-card-back">${card.back}</div>
+                        <div class="list-card-actions">
+                            <button class="btn-danger" onclick="markCardFromList('${card.id}', 'not-mastered')">❌</button>
+                            <button class="btn-review" onclick="markCardFromList('${card.id}', 'reviewing')">🔄</button>
+                            <button class="btn-success" onclick="markCardFromList('${card.id}', 'mastered')">✅</button>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function toggleTrainingView() {
+            trainingViewMode = trainingViewMode === 'card' ? 'list' : 'card';
+            updateTrainingDeck();
+        }
+
+        function renderTrainingList() {
+            document.getElementById('trainingContent').innerHTML = `
+                <button class="view-toggle-btn active" onclick="toggleTrainingView()" title="Voir carte par carte">
+                    🃏
+                </button>
+                <div class="training-info">
+                    ${trainingDeck.length} carte${trainingDeck.length > 1 ? 's' : ''} • ${selectedCategory === 'all' ? 'Toutes catégories' : selectedCategory}
+                </div>
+                <div class="cards-list-view">
+                    ${trainingDeck.map(card => {
+                        let statusBadgeClass = '';
+                        let statusBadgeText = '';
+                        if (card.status === 'mastered') {
+                            statusBadgeClass = 'status-mastered';
+                            statusBadgeText = '✅ Maîtrisé';
+                        } else if (card.status === 'reviewing') {
+                            statusBadgeClass = 'status-reviewing';
+                            statusBadgeText = '🔄 En révision';
+                        } else {
+                            statusBadgeClass = 'status-not-mastered';
+                            statusBadgeText = '📖 Non maîtrisé';
+                        }
+                        
+                        return `
+                            <div class="list-card-item">
+                                <div class="card-status ${statusBadgeClass}" style="display: inline-block; margin-bottom: 0.8rem;">${statusBadgeText}</div>
+                                <div class="list-card-front">${card.front}</div>
+                                <div class="list-card-back">${card.back}</div>
+                                <div class="list-card-actions">
+                                    <button class="btn-danger" onclick="markCardFromList('${card.id}', 'not-mastered')">❌</button>
+                                    <button class="btn-review" onclick="markCardFromList('${card.id}', 'reviewing')">🔄</button>
+                                    <button class="btn-success" onclick="markCardFromList('${card.id}', 'mastered')">✅</button>
+                                </div>
+                            </div>
+                        `;
+                    }).join('')}
+                </div>
+            `;
+        }
+
+        function markCardFromList(cardId, status) {
+            // Capturer les compteurs AVANT le changement
+            let categoryCards = selectedCategory === 'all' ? cards : cards.filter(c => c.deck === selectedCategory);
+            const previousCounts = {
+                all: categoryCards.length,
+                notMastered: categoryCards.filter(c => c.status === 'not-mastered').length,
+                reviewing: categoryCards.filter(c => c.status === 'reviewing').length,
+                mastered: categoryCards.filter(c => c.status === 'mastered').length
+            };
+            
+            const cardIndex = cards.findIndex(c => c.id === cardId);
+            
+            if (cardIndex !== -1) {
+                cards[cardIndex].status = status;
+                cards[cardIndex].lastReviewed = new Date().toISOString();
+                cards[cardIndex].reviewCount++;
+
+                const today = new Date().toDateString();
+                if (studyStats.lastStudyDate !== today) {
+                    studyStats.today = 0;
+                    studyStats.lastStudyDate = today;
+                    updateStreak();
+                    studyStats.streak++;
+                }
+
+                studyStats.today++;
+                studyStats.total++;
+                studyStats.last7Days[6]++;
+
+                if (!studyHistory[today]) {
+                    studyHistory[today] = 0;
+                }
+                studyHistory[today]++;
+
+                checkCategoryBadge(cards[cardIndex].deck);
+                updateAchievements();
+                saveData();
+                
+                // Mettre à jour les compteurs AVEC animations
+                updateFilterCounts(previousCounts);
+                updateAllViews();
+                
+                // Re-render la liste avec les nouveaux statuts
+                updateTrainingDeck();
+            }
+        }
+
+        function renderTrainingCard() {
+            const card = trainingDeck[currentCardIndex];
+            const progress = `${currentCardIndex + 1}/${trainingDeck.length}`;
+            
+            let statusBadgeClass = '';
+            let statusBadgeText = '';
+            if (card.status === 'mastered') {
+                statusBadgeClass = 'flashcard-status-mastered';
+                statusBadgeText = '✅ Maîtrisé';
+            } else if (card.status === 'reviewing') {
+                statusBadgeClass = 'flashcard-status-reviewing';
+                statusBadgeText = '🔄 En révision';
+            } else {
+                statusBadgeClass = 'flashcard-status-not-mastered';
+                statusBadgeText = '📖 Non maîtrisé';
+            }
+            
+            document.getElementById('trainingContent').innerHTML = `
+                <div class="training-info">
+                    ${progress} • ${card.deck}
+                </div>
+                
+                <div class="flashcard">
+                    <div class="flashcard-inner" id="flashcardInner" onclick="flipCard()">
+                        <div class="flashcard-front">
+                            <div class="flashcard-status-badge ${statusBadgeClass}">${statusBadgeText}</div>
+                            <div class="flashcard-content">${card.front}</div>
+                            <div class="flashcard-hint">👆 Clique pour révéler la réponse</div>
+                        </div>
+                        <div class="flashcard-back">
+                            <div class="flashcard-status-badge ${statusBadgeClass}">${statusBadgeText}</div>
+                            <div class="flashcard-content">${card.back}</div>
+                            <div class="flashcard-hint">Quelle est ta maîtrise ?</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="training-nav">
+                    <button class="btn-secondary" onclick="previousCard()" ${currentCardIndex === 0 ? 'disabled' : ''}>
+                        ◀ Précédent
+                    </button>
+                    <button class="btn-secondary" onclick="nextCard()" ${currentCardIndex === trainingDeck.length - 1 ? 'disabled' : ''}>
+                        Suivant ▶
+                    </button>
+                </div>
+
+                <div class="flashcard-controls">
+                    <button class="btn-danger" onclick="markCardWithAnimation('not-mastered', event)">❌ Pas du tout</button>
+                    <button class="btn-review" onclick="markCardWithAnimation('reviewing', event)">🔄 À revoir</button>
+                    <button class="btn-success" onclick="markCardWithAnimation('mastered', event)">✅ Maîtrisé</button>
+                </div>
+            `;
+        }
+
+        function flipCard() {
+            document.getElementById('flashcardInner').classList.toggle('flipped');
+        }
+
+        function previousCard() {
+            if (currentCardIndex > 0) {
+                currentCardIndex--;
+                renderTrainingCard();
+            }
+        }
+
+        function nextCard() {
+            if (currentCardIndex < trainingDeck.length - 1) {
+                currentCardIndex++;
+                renderTrainingCard();
+            }
+        }
+
+        function markCard(status) {
+            const card = trainingDeck[currentCardIndex];
+            const cardIndex = cards.findIndex(c => c.id === card.id);
+            
+            if (cardIndex !== -1) {
+                cards[cardIndex].status = status;
+                cards[cardIndex].lastReviewed = new Date().toISOString();
+                cards[cardIndex].reviewCount++;
+
+                const today = new Date().toDateString();
+                if (studyStats.lastStudyDate !== today) {
+                    studyStats.today = 0;
+                    studyStats.lastStudyDate = today;
+                    updateStreak();
+                    studyStats.streak++;
+                }
+
+                studyStats.today++;
+                studyStats.total++;
+                studyStats.last7Days[6]++;
+
+                if (!studyHistory[today]) {
+                    studyHistory[today] = 0;
+                }
+                studyHistory[today]++;
+
+                // Check category badge
+                checkCategoryBadge(card.deck);
+
+                updateAchievements();
+                saveData();
+                updateAllViews();
+
+                if (currentCardIndex < trainingDeck.length - 1) {
+                    currentCardIndex++;
+                    renderTrainingCard();
+                } else {
+                    showTrainingComplete();
+                }
+            }
+        }
+
+        function markCardWithAnimation(status, event) {
+            const button = event.currentTarget;
+            
+            // Capturer les compteurs AVANT le changement
+            let categoryCards = selectedCategory === 'all' ? cards : cards.filter(c => c.deck === selectedCategory);
+            const previousCounts = {
+                all: categoryCards.length,
+                notMastered: categoryCards.filter(c => c.status === 'not-mastered').length,
+                reviewing: categoryCards.filter(c => c.status === 'reviewing').length,
+                mastered: categoryCards.filter(c => c.status === 'mastered').length
+            };
+            
+            // Animation du bouton
+            button.classList.add('btn-clicked');
+            
+            // Animation de la carte qui part
+            const flashcard = document.querySelector('.flashcard');
+            if (flashcard) {
+                flashcard.classList.add('slide-out');
+            }
+            
+            // Attendre la fin de l'animation avant de passer à la suivante
+            setTimeout(() => {
+                const card = trainingDeck[currentCardIndex];
+                const cardIndex = cards.findIndex(c => c.id === card.id);
+                
+                if (cardIndex !== -1) {
+                    // Toujours mettre à jour le statut, même si c'est le même
+                    cards[cardIndex].status = status;
+                    cards[cardIndex].lastReviewed = new Date().toISOString();
+                    cards[cardIndex].reviewCount++;
+
+                    const today = new Date().toDateString();
+                    if (studyStats.lastStudyDate !== today) {
+                        studyStats.today = 0;
+                        studyStats.lastStudyDate = today;
+                        updateStreak();
+                        studyStats.streak++;
+                    }
+
+                    studyStats.today++;
+                    studyStats.total++;
+                    studyStats.last7Days[6]++;
+
+                    if (!studyHistory[today]) {
+                        studyHistory[today] = 0;
+                    }
+                    studyHistory[today]++;
+
+                    checkCategoryBadge(card.deck);
+                    updateAchievements();
+                    saveData();
+                    
+                    // Mettre à jour les compteurs AVEC animations
+                    updateFilterCounts(previousCounts);
+                    
+                    // Si on filtre par statut et que la carte ne correspond plus, la retirer du deck
+                    const shouldRemoveFromDeck = (
+                        (selectedStatusFilter === 'not-mastered' && status !== 'not-mastered') ||
+                        (selectedStatusFilter === 'reviewing' && status !== 'reviewing') ||
+                        (selectedStatusFilter === 'mastered' && status !== 'mastered')
+                    );
+                    
+                    if (shouldRemoveFromDeck) {
+                        // Retirer la carte du deck d'entraînement
+                        trainingDeck.splice(currentCardIndex, 1);
+                        
+                        // Si c'était la dernière carte ou si on est à la fin
+                        if (trainingDeck.length === 0 || currentCardIndex >= trainingDeck.length) {
+                            setTimeout(() => {
+                                if (trainingDeck.length === 0) {
+                                    showTrainingComplete();
+                                } else {
+                                    currentCardIndex = Math.min(currentCardIndex, trainingDeck.length - 1);
+                                    renderTrainingCard();
+                                    setTimeout(() => {
+                                        const newFlashcard = document.querySelector('.flashcard');
+                                        if (newFlashcard) {
+                                            newFlashcard.classList.add('slide-in');
+                                            setTimeout(() => newFlashcard.classList.remove('slide-in'), 400);
+                                        }
+                                    }, 50);
+                                }
+                            }, 100);
+                        } else {
+                            // Afficher la carte à la même position (qui est maintenant la suivante)
+                            setTimeout(() => {
+                                renderTrainingCard();
+                                setTimeout(() => {
+                                    const newFlashcard = document.querySelector('.flashcard');
+                                    if (newFlashcard) {
+                                        newFlashcard.classList.add('slide-in');
+                                        setTimeout(() => newFlashcard.classList.remove('slide-in'), 400);
+                                    }
+                                }, 50);
+                            }, 100);
+                        }
+                    } else {
+                        // Le filtre correspond toujours, passer à la carte suivante normalement
+                        if (currentCardIndex < trainingDeck.length - 1) {
+                            currentCardIndex++;
+                            
+                            setTimeout(() => {
+                                renderTrainingCard();
+                                setTimeout(() => {
+                                    const newFlashcard = document.querySelector('.flashcard');
+                                    if (newFlashcard) {
+                                        newFlashcard.classList.add('slide-in');
+                                        setTimeout(() => newFlashcard.classList.remove('slide-in'), 400);
+                                    }
+                                }, 50);
+                            }, 100);
+                        } else {
+                            setTimeout(() => {
+                                showTrainingComplete();
+                            }, 100);
+                        }
+                    }
+                    
+                    updateAllViews();
+                }
+            }, 400);
+        }
+
+        function showTrainingComplete() {
+            const deckName = selectedCategory === 'all' ? 'toutes les catégories' : selectedCategory;
+            let filterText = '';
+            if (selectedStatusFilter === 'not-mastered') filterText = ' non maîtrisées';
+            else if (selectedStatusFilter === 'reviewing') filterText = ' en révision';
+            else if (selectedStatusFilter === 'mastered') filterText = ' maîtrisées';
+            
+            document.getElementById('trainingContent').innerHTML = `
+                <div class="stat-card" style="text-align: center; padding: 4rem;">
+                    <div style="font-size: 5rem; margin-bottom: 1rem;">🎉</div>
+                    <h2 style="margin-bottom: 1rem;">Bravo ! Entraînement terminé</h2>
+                    <p style="color: var(--text-secondary); margin-bottom: 2rem; font-size: 1.1rem;">
+                        Tu as révisé toutes les cartes${filterText} de ${deckName} !
+                    </p>
+                    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                        <button class="btn-primary" onclick="updateTrainingDeck()">🔄 Recommencer</button>
+                        <button class="btn-secondary" onclick="switchView('dashboard')">📊 Tableau de bord</button>
+                    </div>
+                </div>
+            `;
+        }
+
+        function checkCategoryBadge(deckName) {
+            const deckCards = cards.filter(c => c.deck === deckName);
+            const masteredCount = deckCards.filter(c => c.status === 'mastered').length;
+            const totalCount = deckCards.length;
+
+            if (!categoryBadges[deckName]) {
+                categoryBadges[deckName] = {
+                    earned: false,
+                    date: null,
+                    totalReviewed: 0
+                };
+            }
+
+            categoryBadges[deckName].totalReviewed++;
+
+            // Check if 20/20 achieved (or 100%)
+            if (totalCount > 0 && masteredCount === totalCount && !categoryBadges[deckName].earned) {
+                categoryBadges[deckName].earned = true;
+                categoryBadges[deckName].date = new Date().toISOString();
+                showAlert('Badge débloqué !', `🏆 Badge parfait pour "${deckName}" !`, true);
+            }
+
+            saveData();
+        }
+
+        // ============================================================================
+        // LIBRARY
+        // ============================================================================
+        
+        function filterLibrary(filter) {
+            currentLibraryFilter = filter;
+            currentDeckFilter = null;
+            
+            document.querySelectorAll('.collection-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            document.querySelector(`[data-filter="${filter}"]`).classList.add('active');
+            
+            // Remove deck active
+            document.querySelectorAll('.deck-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            renderLibrary();
+        }
+
+        function filterByDeck(deckName) {
+            currentDeckFilter = deckName;
+            currentLibraryFilter = null;
+            
+            document.querySelectorAll('.collection-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            document.querySelectorAll('.deck-item').forEach(item => {
+                item.classList.remove('active');
+                if (item.dataset.deck === deckName) {
+                    item.classList.add('active');
+                }
+            });
+            
+            renderLibrary();
+        }
+
+        function renderLibrary() {
+            // Update sidebar counts
+            document.getElementById('allCount').textContent = `${cards.length} cartes`;
+            document.getElementById('masteredCount').textContent = `${cards.filter(c => c.status === 'mastered').length} cartes`;
+            document.getElementById('reviewingCount').textContent = `${cards.filter(c => c.status === 'reviewing').length} cartes`;
+            document.getElementById('notMasteredCount').textContent = `${cards.filter(c => c.status === 'not-mastered').length} cartes`;
+
+            // Render decks sidebar
+            const decksSidebar = document.getElementById('decksSidebar');
+            decksSidebar.innerHTML = decks.map(deck => {
+                const count = cards.filter(c => c.deck === deck).length;
+                return `
+                    <div class="deck-item" data-deck="${deck}" onclick="filterByDeck('${deck}')">
+                        <span class="collection-icon">📁</span>
+                        <div class="collection-info">
+                            <div class="collection-name">${deck}</div>
+                            <div class="collection-count">${count} cartes</div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+
+            // Filter cards
+            let filteredCards = [...cards];
+            
+            if (currentLibraryFilter === 'mastered') {
+                filteredCards = cards.filter(c => c.status === 'mastered');
+            } else if (currentLibraryFilter === 'reviewing') {
+                filteredCards = cards.filter(c => c.status === 'reviewing');
+            } else if (currentLibraryFilter === 'not-mastered') {
+                filteredCards = cards.filter(c => c.status === 'not-mastered');
+            } else if (currentDeckFilter) {
+                filteredCards = cards.filter(c => c.deck === currentDeckFilter);
+            }
+
+            // Search filter
+            if (searchQuery) {
+                filteredCards = filteredCards.filter(c => 
+                    c.front.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                    c.back.toLowerCase().includes(searchQuery.toLowerCase())
+                );
+            }
+
+            // Update header
+            let title = 'Toutes les cartes';
+            if (currentLibraryFilter === 'mastered') title = 'Cartes maîtrisées';
+            else if (currentLibraryFilter === 'reviewing') title = 'Cartes en révision';
+            else if (currentLibraryFilter === 'not-mastered') title = 'Cartes non maîtrisées';
+            else if (currentDeckFilter) title = currentDeckFilter;
+
+            document.getElementById('libraryTitle').textContent = title;
+            document.getElementById('librarySubtitle').textContent = `${filteredCards.length} cartes`;
+
+            // Render cards
+            const grid = document.getElementById('cardsGrid');
+            
+            if (filteredCards.length === 0) {
+                grid.innerHTML = `
+                    <div style="grid-column: 1/-1; text-align: center; padding: 4rem;">
+                        <div style="font-size: 4rem; margin-bottom: 1rem;">📭</div>
+                        <h3>Aucune carte trouvée</h3>
+                        <p style="color: var(--text-secondary); margin-top: 1rem;">
+                            ${searchQuery ? 'Essaie une autre recherche' : 'Commence par ajouter des cartes !'}
+                        </p>
+                    </div>
+                `;
+                return;
+            }
+
+            grid.innerHTML = filteredCards.map(card => {
+                let statusClass = '';
+                let statusText = '';
+                let statusIcon = '';
+
+                if (card.status === 'mastered') {
+                    statusClass = 'status-mastered';
+                    statusText = '✅ Maîtrisé';
+                } else if (card.status === 'reviewing') {
+                    statusClass = 'status-reviewing';
+                    statusText = '🔄 En révision';
+                } else {
+                    statusClass = 'status-not-mastered';
+                    statusText = '📖 Non maîtrisé';
+                }
+
+                return `
+                    <div class="card-item">
+                        <div class="card-status ${statusClass}">${statusText}</div>
+                        <div class="card-front">${card.front}</div>
+                        <div class="card-back">${card.back}</div>
+                        <div class="card-meta">
+                            <span class="deck-badge">${card.deck}</span>
+                        </div>
+                        <div class="card-actions">
+                            <button class="btn-small" onclick="editCard('${card.id}')">
+                                ✏️ Modifier
+                            </button>
+                            <button class="btn-small btn-danger" onclick="deleteCard('${card.id}')">
+                                🗑️ Supprimer
+                            </button>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // Search functionality
+        document.getElementById('searchBox').addEventListener('input', (e) => {
+            searchQuery = e.target.value.trim();
+            renderLibrary();
+        });
+
+        // ============================================================================
+        // CARD MANAGEMENT
+        // ============================================================================
+        
+        function openAddCardModal() {
+            document.getElementById('addCardModal').classList.add('active');
+            updateDeckSelects();
+        }
+
+        function closeAddCardModal() {
+            document.getElementById('addCardModal').classList.remove('active');
+            document.getElementById('cardFront').value = '';
+            document.getElementById('cardBack').value = '';
+        }
+
+        function addCard(event) {
+            event.preventDefault();
+
+            const front = document.getElementById('cardFront').value.trim();
+            const back = document.getElementById('cardBack').value.trim();
+            const deck = document.getElementById('cardDeck').value;
+
+            if (!front || !back) {
+                showAlert('Erreur', 'Remplis tous les champs !');
+                return;
+            }
+
+            const newCard = {
+                id: Date.now().toString() + Math.random().toString(36).substr(2, 9),
+                front,
+                back,
+                deck,
+                status: 'not-mastered',
+                createdAt: new Date().toISOString(),
+                lastReviewed: null,
+                reviewCount: 0
+            };
+
+            cards.push(newCard);
+            updateAchievements();
+            saveData();
+            updateAllViews();
+            closeAddCardModal();
+            showAlert('Succès', 'Carte ajoutée !', true);
+        }
+
+        function editCard(cardId) {
+            const card = cards.find(c => c.id === cardId);
+            if (!card) return;
+
+            currentEditingCard = card;
+            document.getElementById('editCardFront').value = card.front;
+            document.getElementById('editCardBack').value = card.back;
+            document.getElementById('editCardDeck').value = card.deck;
+            document.getElementById('editCardStatus').value = card.status;
+            
+            updateDeckSelects();
+            document.getElementById('editCardModal').classList.add('active');
+        }
+
+        function closeEditCardModal() {
+            document.getElementById('editCardModal').classList.remove('active');
+            currentEditingCard = null;
+        }
+
+        function saveEditCard(event) {
+            event.preventDefault();
+
+            if (!currentEditingCard) return;
+
+            const cardIndex = cards.findIndex(c => c.id === currentEditingCard.id);
+            if (cardIndex === -1) return;
+
+            cards[cardIndex].front = document.getElementById('editCardFront').value.trim();
+            cards[cardIndex].back = document.getElementById('editCardBack').value.trim();
+            cards[cardIndex].deck = document.getElementById('editCardDeck').value;
+            cards[cardIndex].status = document.getElementById('editCardStatus').value;
+
+            saveData();
+            updateAllViews();
+            closeEditCardModal();
+            showAlert('Succès', 'Carte mise à jour !', true);
+        }
+
+        function deleteCard(cardId) {
+            if (!confirm('Supprimer cette carte ?')) return;
+
+            cards = cards.filter(c => c.id !== cardId);
+            saveData();
+            updateAllViews();
+            showAlert('Succès', 'Carte supprimée !', true);
+        }
+
+        // ============================================================================
+        // CALENDAR
+        // ============================================================================
+        
+        let currentCalendarDate = new Date();
+
+        function renderCalendar() {
+            const year = currentCalendarDate.getFullYear();
+            const month = currentCalendarDate.getMonth();
+
+            const monthNames = ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'];
+            document.getElementById('calendarMonth').textContent = `${monthNames[month]} ${year}`;
+
+            const firstDay = new Date(year, month, 1).getDay();
+            const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+            const adjustedFirstDay = firstDay === 0 ? 6 : firstDay - 1;
+
+            let html = ['Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam', 'Dim'].map(day =>
+                `<div class="calendar-day-header">${day}</div>`
+            ).join('');
+
+            for (let i = adjustedFirstDay - 1; i >= 0; i--) {
+                html += `<div class="calendar-day"></div>`;
+            }
+
+            const today = new Date();
+            for (let day = 1; day <= daysInMonth; day++) {
+                const dateStr = new Date(year, month, day).toDateString();
+                const count = studyHistory[dateStr] || 0;
+                const isToday = today.getDate() === day && today.getMonth() === month && today.getFullYear() === year;
+                const hasActivity = count > 0;
+
+                let classes = 'calendar-day';
+                if (isToday) classes += ' today';
+                else if (hasActivity) classes += ' studied';
+
+                html += `
+                    <div class="${classes}">
+                        <div class="calendar-day-number">${day}</div>
+                        ${hasActivity ? `<div class="calendar-day-count">${count}</div>` : ''}
+                    </div>
+                `;
+            }
+
+            document.getElementById('calendarGrid').innerHTML = html;
+        }
+
+        function previousMonth() {
+            currentCalendarDate.setMonth(currentCalendarDate.getMonth() - 1);
+            renderCalendar();
+        }
+
+        function nextMonth() {
+            currentCalendarDate.setMonth(currentCalendarDate.getMonth() + 1);
+            renderCalendar();
+        }
+
+        // ============================================================================
+        // ACHIEVEMENTS
+        // ============================================================================
+        
+        function renderAchievements() {
+            // Category badges
+            const badgesContainer = document.getElementById('categoryBadges');
+            const badgeItems = decks.map(deck => {
+                const badge = categoryBadges[deck] || { earned: false, totalReviewed: 0 };
+                const deckCards = cards.filter(c => c.deck === deck);
+                const masteredCount = deckCards.filter(c => c.status === 'mastered').length;
+                const totalCount = deckCards.length;
+                const progress = totalCount > 0 ? Math.round((masteredCount / totalCount) * 100) : 0;
+
+                return `
+                    <div class="achievement-card ${badge.earned ? 'earned' : 'locked'}">
+                        <span class="achievement-icon">${badge.earned ? '🏆' : '🔒'}</span>
+                        <h3 class="achievement-title">${deck}</h3>
+                        <p class="achievement-desc">
+                            ${badge.earned ? `Débloqué le ${new Date(badge.date).toLocaleDateString()}` : 'Maîtrise toutes les cartes'}
+                        </p>
+                        ${badge.earned ? `
+                            <div class="badge-stats">
+                                <div><strong>Score parfait :</strong> ${totalCount}/${totalCount} ✅</div>
+                                <div><strong>Révisions totales :</strong> ${badge.totalReviewed}</div>
+                            </div>
+                        ` : `
+                            <div class="achievement-progress">
+                                <div class="progress-text">${masteredCount} / ${totalCount} cartes maîtrisées</div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: ${progress}%"></div>
+                                </div>
+                            </div>
+                        `}
+                    </div>
+                `;
+            }).join('');
+
+            badgesContainer.innerHTML = badgeItems || '<p style="color: var(--text-secondary); grid-column: 1/-1; text-align: center;">Crée des catégories pour débloquer des badges !</p>';
+
+            // General achievements
+            const achievementsContainer = document.getElementById('achievementsList');
+            achievementsContainer.innerHTML = achievements.map(achievement => {
+                const progress = Math.min(achievement.progress, achievement.target);
+                const percent = Math.round((progress / achievement.target) * 100);
+                const unlocked = progress >= achievement.target;
+
+                return `
+                    <div class="achievement-card ${unlocked ? '' : 'locked'}">
+                        <span class="achievement-icon">${achievement.icon}</span>
+                        <h3 class="achievement-title">${achievement.title}</h3>
+                        <p class="achievement-desc">${achievement.description}</p>
+                        <div class="achievement-progress">
+                            <div class="progress-text">${unlocked ? 'Débloqué !' : `${progress} / ${achievement.target}`}</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: ${percent}%"></div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function updateAchievements() {
+            achievements.find(a => a.id === 'first-card').progress = cards.length > 0 ? 1 : 0;
+            achievements.find(a => a.id === 'first-study').progress = studyStats.total > 0 ? 1 : 0;
+            achievements.find(a => a.id === 'streak-3').progress = studyStats.streak;
+            achievements.find(a => a.id === 'streak-7').progress = studyStats.streak;
+            achievements.find(a => a.id === 'streak-30').progress = studyStats.streak;
+            achievements.find(a => a.id === 'master-10').progress = cards.filter(c => c.status === 'mastered').length;
+            achievements.find(a => a.id === 'master-50').progress = cards.filter(c => c.status === 'mastered').length;
+            achievements.find(a => a.id === 'master-100').progress = cards.filter(c => c.status === 'mastered').length;
+            achievements.find(a => a.id === 'cards-100').progress = cards.length;
+            achievements.find(a => a.id === 'total-500').progress = studyStats.total;
+        }
+
+        // ============================================================================
+        // SETTINGS
+        // ============================================================================
+        
+        function renderSettings() {
+            const decksList = document.getElementById('decksList');
+            decksList.innerHTML = decks.map(deck => {
+                const count = cards.filter(c => c.deck === deck).length;
+                return `
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 1rem; background: rgba(255, 107, 157, 0.05); border-radius: 12px; margin-bottom: 0.5rem; border: 2px solid rgba(255, 107, 157, 0.1);">
+                        <span style="font-weight: 600;"><strong>${deck}</strong> <span style="color: var(--text-secondary);">(${count} cartes)</span></span>
+                        <div style="display: flex; gap: 0.5rem;">
+                            <button class="btn-small" onclick="renameDeck('${deck.replace(/'/g, "\\'")}')" style="padding: 0.5rem 1rem;">✏️ Renommer</button>
+                            ${deck !== 'Général' ? `<button class="btn-small btn-danger" onclick="deleteDeck('${deck.replace(/'/g, "\\'")}')">Supprimer</button>` : ''}
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function updateGoal() {
+            const newGoal = parseInt(document.getElementById('goalInput').value);
+            if (newGoal > 0) {
+                dailyGoal = newGoal;
+                saveData();
+                updateAllViews();
+                showAlert('Succès', `Objectif mis à jour : ${newGoal} cartes/jour`, true);
+            }
+        }
+
+        function addDeck() {
+            const input = document.getElementById('newDeckInput');
+            const deckName = input.value.trim();
+
+            if (!deckName) {
+                showAlert('Erreur', 'Entre un nom de catégorie !');
+                return;
+            }
+
+            if (decks.includes(deckName)) {
+                showAlert('Erreur', 'Cette catégorie existe déjà !');
+                return;
+            }
+
+            decks.push(deckName);
+            saveData();
+            input.value = '';
+            renderSettings();
+            updateDeckSelects();
+            showAlert('Succès', `Catégorie "${deckName}" ajoutée !`, true);
+        }
+
+        function renameDeck(oldName) {
+            const newName = prompt('Nouveau nom pour la catégorie :', oldName);
+            
+            if (!newName || newName.trim() === '') return;
+            
+            const trimmedName = newName.trim();
+            
+            if (trimmedName === oldName) return;
+            
+            if (decks.includes(trimmedName)) {
+                showAlert('Erreur', 'Cette catégorie existe déjà !');
+                return;
+            }
+
+            // Renommer la catégorie dans la liste
+            const deckIndex = decks.indexOf(oldName);
+            if (deckIndex !== -1) {
+                decks[deckIndex] = trimmedName;
+            }
+
+            // Renommer dans toutes les cartes
+            cards.forEach(card => {
+                if (card.deck === oldName) {
+                    card.deck = trimmedName;
+                }
+            });
+
+            // Renommer dans les badges de catégorie
+            if (categoryBadges[oldName]) {
+                categoryBadges[trimmedName] = categoryBadges[oldName];
+                delete categoryBadges[oldName];
+            }
+
+            saveData();
+            renderSettings();
+            updateDeckSelects();
+            updateAllViews();
+            showAlert('Succès', `Catégorie renommée en "${trimmedName}" !`, true);
+        }
+
+        function deleteDeck(deckName) {
+            const deckCards = cards.filter(c => c.deck === deckName);
+            if (deckCards.length > 0) {
+                if (!confirm(`Cette catégorie contient ${deckCards.length} carte(s). Les supprimer aussi ?`)) {
+                    return;
+                }
+                cards = cards.filter(c => c.deck !== deckName);
+            }
+
+            decks = decks.filter(d => d !== deckName);
+            delete categoryBadges[deckName];
+            saveData();
+            renderSettings();
+            updateDeckSelects();
+            updateAllViews();
+            showAlert('Succès', `Catégorie "${deckName}" supprimée`, true);
+        }
+
+        // ============================================================================
+        // ALERTS
+        // ============================================================================
+        
+        function showAlert(title, message, isSuccess = false) {
+            const alert = document.createElement('div');
+            alert.className = `alert ${isSuccess ? 'success' : 'error'}`;
+            alert.innerHTML = `
+                <div class="alert-header">
+                    <div class="alert-icon">${isSuccess ? '✅' : '⚠️'}</div>
+                    <div class="alert-title">${title}</div>
+                </div>
+                <div class="alert-message">${message}</div>
+            `;
+            document.body.appendChild(alert);
+            
+            setTimeout(() => alert.remove(), 4000);
+        }
+
+        function updateAllViews() {
+            document.getElementById('totalCards').textContent = cards.length;
+            document.getElementById('masteredCards').textContent = cards.filter(c => c.status === 'mastered').length;
+            document.getElementById('streakCount').textContent = studyStats.streak;
+            
+            if (currentView === 'dashboard') updateDashboard();
+            else if (currentView === 'library') renderLibrary();
+            else if (currentView === 'calendar') renderCalendar();
+            else if (currentView === 'achievements') renderAchievements();
+            else if (currentView === 'settings') renderSettings();
+            else if (currentView === 'training') {
+                renderCategoryList();
+                updateFilterCounts();
+            }
+        }
+
+        // ============================================================================
+        // ANKI MANAGEMENT
+        // ============================================================================
+        
+        function openAnkiSwitcher() {
+            document.getElementById('ankiSwitcherModal').classList.add('active');
+            renderAnkiList();
+        }
+
+        function closeAnkiSwitcher() {
+            document.getElementById('ankiSwitcherModal').classList.remove('active');
+        }
+
+        function renderAnkiList() {
+            const container = document.getElementById('ankiList');
+            
+            container.innerHTML = ankis.map(anki => {
+                const data = localStorage.getItem(`vocabboost_anki_${anki.id}`);
+                let cardCount = 0;
+                let masteredCount = 0;
+                
+                if (data) {
+                    const ankiData = JSON.parse(data);
+                    cardCount = ankiData.cards?.length || 0;
+                    masteredCount = ankiData.cards?.filter(c => c.status === 'mastered').length || 0;
+                }
+                
+                const isActive = anki.id === currentAnkiId;
+                
+                return `
+                    <div class="anki-item ${isActive ? 'active' : ''}" onclick="switchAnki('${anki.id}')">
+                        <div class="anki-item-info">
+                            <div class="anki-item-name">${anki.name}</div>
+                            <div class="anki-item-stats">
+                                ${cardCount} cartes • ${masteredCount} maîtrisées
+                            </div>
+                        </div>
+                        <div class="anki-item-actions">
+                            ${isActive ? '<span style="font-size: 1.5rem;">✓</span>' : ''}
+                            ${!isActive ? `
+                                <button class="btn-icon" onclick="event.stopPropagation(); renameAnki('${anki.id}')" title="Renommer">✏️</button>
+                                <button class="btn-icon" onclick="event.stopPropagation(); deleteAnki('${anki.id}')" title="Supprimer">🗑️</button>
+                            ` : `
+                                <button class="btn-icon" onclick="event.stopPropagation(); renameAnki('${anki.id}')" title="Renommer">✏️</button>
+                            `}
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function createNewAnki() {
+            const name = prompt('Nom du nouvel Anki :', 'Mon nouvel Anki');
+            if (!name || name.trim() === '') return;
+            
+            const newAnki = {
+                id: Date.now().toString(),
+                name: name.trim(),
+                createdAt: new Date().toISOString()
+            };
+            
+            ankis.push(newAnki);
+            localStorage.setItem('vocabboost_ankis', JSON.stringify(ankis));
+            
+            showAlert('Succès', `Anki "${name}" créé !`, true);
+            renderAnkiList();
+            updateAnkiUI();
+        }
+
+        function switchAnki(ankiId) {
+            if (ankiId === currentAnkiId) {
+                closeAnkiSwitcher();
+                return;
+            }
+            
+            // Sauvegarder l'Anki actuel
+            saveData();
+            
+            // Changer d'Anki
+            currentAnkiId = ankiId;
+            localStorage.setItem('vocabboost_current_anki', ankiId);
+            
+            // Charger le nouvel Anki
+            loadData();
+            updateAnkiUI();
+            updateAllViews();
+            
+            closeAnkiSwitcher();
+            
+            const ankiName = ankis.find(a => a.id === ankiId)?.name;
+            showAlert('Anki changé', `Tu es maintenant sur "${ankiName}"`, true);
+        }
+
+        function renameAnki(ankiId) {
+            const anki = ankis.find(a => a.id === ankiId);
+            if (!anki) return;
+            
+            const newName = prompt('Nouveau nom :', anki.name);
+            if (!newName || newName.trim() === '') return;
+            
+            anki.name = newName.trim();
+            localStorage.setItem('vocabboost_ankis', JSON.stringify(ankis));
+            
+            renderAnkiList();
+            updateAnkiUI();
+            showAlert('Succès', 'Anki renommé !', true);
+        }
+
+        function deleteAnki(ankiId) {
+            if (ankis.length === 1) {
+                showAlert('Erreur', 'Tu ne peux pas supprimer ton dernier Anki !');
+                return;
+            }
+            
+            const anki = ankis.find(a => a.id === ankiId);
+            if (!anki) return;
+            
+            if (!confirm(`Supprimer l'Anki "${anki.name}" ?\n\nToutes les cartes seront perdues !`)) return;
+            
+            // Supprimer les données
+            localStorage.removeItem(`vocabboost_anki_${ankiId}`);
+            
+            // Retirer de la liste
+            ankis = ankis.filter(a => a.id !== ankiId);
+            localStorage.setItem('vocabboost_ankis', JSON.stringify(ankis));
+            
+            // Si c'était l'Anki actuel, changer pour le premier
+            if (currentAnkiId === ankiId) {
+                currentAnkiId = ankis[0].id;
+                localStorage.setItem('vocabboost_current_anki', currentAnkiId);
+                loadData();
+                updateAllViews();
+            }
+            
+            renderAnkiList();
+            updateAnkiUI();
+            showAlert('Succès', 'Anki supprimé !', true);
+        }
+
+        // ============================================================================
+        // MINI-JEUX
+        // ============================================================================
+        
+        let currentGame = null;
+        let gameScore = 0;
+        let gameQuestions = [];
+        let currentQuestionIndex = 0;
+        let gameStartTime = null;
+
+        function openMinigamesModal() {
+            if (cards.length < 4) {
+                showAlert('Attention', 'Il te faut au moins 4 cartes pour jouer !');
+                return;
+            }
+            document.getElementById('minigamesModal').classList.add('active');
+        }
+
+        function closeMinigamesModal() {
+            document.getElementById('minigamesModal').classList.remove('active');
+            // Reset content
+            document.getElementById('minigamesContent').innerHTML = `
+                <div class="minigames-grid">
+                    <div class="minigame-card" onclick="startQuizGame()">
+                        <div class="minigame-icon">🎯</div>
+                        <h3 class="minigame-title">Quiz</h3>
+                        <p class="minigame-desc">Réponds aux questions avec 4 choix</p>
+                    </div>
+                    <div class="minigame-card" onclick="startMemoryGame()">
+                        <div class="minigame-icon">🧠</div>
+                        <h3 class="minigame-title">Memory</h3>
+                        <p class="minigame-desc">Trouve les paires de cartes</p>
+                    </div>
+                    <div class="minigame-card" onclick="startTypingGame()">
+                        <div class="minigame-icon">⌨️</div>
+                        <h3 class="minigame-title">Speed Typing</h3>
+                        <p class="minigame-desc">Tape la réponse le plus vite possible</p>
+                    </div>
+                    <div class="minigame-card" onclick="startTrueFalseGame()">
+                        <div class="minigame-icon">✅❌</div>
+                        <h3 class="minigame-title">Vrai ou Faux</h3>
+                        <p class="minigame-desc">Décide si la réponse est correcte</p>
+                    </div>
+                </div>
+            `;
+        }
+
+        // QUIZ GAME
+        function startQuizGame() {
+            currentGame = 'quiz';
+            gameScore = 0;
+            currentQuestionIndex = 0;
+            gameStartTime = Date.now();
+            
+            // Prendre 10 cartes aléatoires
+            gameQuestions = [...cards].sort(() => Math.random() - 0.5).slice(0, Math.min(10, cards.length));
+            
+            renderQuizQuestion();
+        }
+
+        function renderQuizQuestion() {
+            if (currentQuestionIndex >= gameQuestions.length) {
+                endQuizGame();
+                return;
+            }
+
+            const card = gameQuestions[currentQuestionIndex];
+            const wrongAnswers = cards
+                .filter(c => c.id !== card.id)
+                .sort(() => Math.random() - 0.5)
+                .slice(0, 3)
+                .map(c => c.back);
+            
+            const allAnswers = [card.back, ...wrongAnswers].sort(() => Math.random() - 0.5);
+
+            document.getElementById('minigamesContent').innerHTML = `
+                <div class="game-container">
+                    <h2>🎯 Quiz - Question ${currentQuestionIndex + 1}/${gameQuestions.length}</h2>
+                    <div class="game-area">
+                        <div class="game-question">${card.front}</div>
+                        <div class="game-options">
+                            ${allAnswers.map(answer => `
+                                <button class="game-option" onclick="checkQuizAnswer('${answer.replace(/'/g, "\\'")}', '${card.back.replace(/'/g, "\\'")}')">
+                                    ${answer}
+                                </button>
+                            `).join('')}
+                        </div>
+                    </div>
+                    <div class="game-stats">
+                        <div class="game-stat">
+                            <div class="game-stat-value">${gameScore}</div>
+                            <div class="game-stat-label">Score</div>
+                        </div>
+                        <div class="game-stat">
+                            <div class="game-stat-value">${currentQuestionIndex}/${gameQuestions.length}</div>
+                            <div class="game-stat-label">Progression</div>
+                        </div>
+                    </div>
+                    <button class="btn-secondary" style="margin-top: 1rem;" onclick="closeMinigamesModal()">Quitter</button>
+                </div>
+            `;
+        }
+
+        function checkQuizAnswer(selected, correct) {
+            const buttons = document.querySelectorAll('.game-option');
+            buttons.forEach(btn => {
+                btn.style.pointerEvents = 'none';
+                if (btn.textContent.trim() === correct) {
+                    btn.classList.add('correct');
+                } else if (btn.textContent.trim() === selected && selected !== correct) {
+                    btn.classList.add('wrong');
+                }
+            });
+
+            if (selected === correct) {
+                gameScore += 10;
+            }
+
+            setTimeout(() => {
+                currentQuestionIndex++;
+                renderQuizQuestion();
+            }, 1500);
+        }
+
+        function endQuizGame() {
+            const timeTaken = Math.round((Date.now() - gameStartTime) / 1000);
+            const percentage = Math.round((gameScore / (gameQuestions.length * 10)) * 100);
+
+            document.getElementById('minigamesContent').innerHTML = `
+                <div class="game-container">
+                    <div style="font-size: 5rem; margin-bottom: 1rem;">
+                        ${percentage === 100 ? '🏆' : percentage >= 70 ? '🎉' : percentage >= 50 ? '👍' : '💪'}
+                    </div>
+                    <h2>Quiz terminé !</h2>
+                    <div class="game-stats">
+                        <div class="game-stat">
+                            <div class="game-stat-value">${gameScore}</div>
+                            <div class="game-stat-label">Score</div>
+                        </div>
+                        <div class="game-stat">
+                            <div class="game-stat-value">${percentage}%</div>
+                            <div class="game-stat-label">Réussite</div>
+                        </div>
+                        <div class="game-stat">
+                            <div class="game-stat-value">${timeTaken}s</div>
+                            <div class="game-stat-label">Temps</div>
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 2rem;">
+                        <button class="btn-primary" onclick="startQuizGame()">🔄 Rejouer</button>
+                        <button class="btn-secondary" onclick="closeMinigamesModal()">Fermer</button>
+                    </div>
+                </div>
+            `;
+        }
+
+        // MEMORY GAME
+        function startMemoryGame() {
+            currentGame = 'memory';
+            gameScore = 0;
+            gameStartTime = Date.now();
+            
+            // Prendre 8 cartes aléatoires et les doubler
+            const selectedCards = [...cards].sort(() => Math.random() - 0.5).slice(0, 8);
+            const memoryCards = [...selectedCards, ...selectedCards].sort(() => Math.random() - 0.5);
+            
+            let flippedCards = [];
+            let matchedPairs = 0;
+            let moves = 0;
+
+            function renderMemoryGame() {
+                document.getElementById('minigamesContent').innerHTML = `
+                    <div class="game-container">
+                        <h2>🧠 Memory</h2>
+                        <div class="game-stats" style="margin-bottom: 2rem;">
+                            <div class="game-stat">
+                                <div class="game-stat-value">${moves}</div>
+                                <div class="game-stat-label">Coups</div>
+                            </div>
+                            <div class="game-stat">
+                                <div class="game-stat-value">${matchedPairs}/8</div>
+                                <div class="game-stat-label">Paires</div>
+                            </div>
+                        </div>
+                        <div class="memory-grid" id="memoryGrid"></div>
+                        <button class="btn-secondary" style="margin-top: 2rem;" onclick="closeMinigamesModal()">Quitter</button>
+                    </div>
+                `;
+
+                const grid = document.getElementById('memoryGrid');
+                memoryCards.forEach((card, index) => {
+                    const cardEl = document.createElement('div');
+                    cardEl.className = 'memory-card';
+                    cardEl.dataset.index = index;
+                    cardEl.dataset.cardId = card.id;
+                    cardEl.textContent = '?';
+                    
+                    cardEl.addEventListener('click', () => {
+                        if (flippedCards.length < 2 && !cardEl.classList.contains('flipped') && !cardEl.classList.contains('matched')) {
+                            cardEl.classList.add('flipped');
+                            cardEl.textContent = card.front;
+                            flippedCards.push({ element: cardEl, card: card });
+
+                            if (flippedCards.length === 2) {
+                                moves++;
+                                
+                                if (flippedCards[0].card.id === flippedCards[1].card.id) {
+                                    // Match!
+                                    setTimeout(() => {
+                                        flippedCards[0].element.classList.add('matched');
+                                        flippedCards[1].element.classList.add('matched');
+                                        flippedCards = [];
+                                        matchedPairs++;
+                                        
+                                        if (matchedPairs === 8) {
+                                            setTimeout(() => endMemoryGame(moves), 500);
+                                        } else {
+                                            renderMemoryGame();
+                                        }
+                                    }, 500);
+                                } else {
+                                    // No match
+                                    setTimeout(() => {
+                                        flippedCards[0].element.classList.remove('flipped');
+                                        flippedCards[0].element.textContent = '?';
+                                        flippedCards[1].element.classList.remove('flipped');
+                                        flippedCards[1].element.textContent = '?';
+                                        flippedCards = [];
+                                        renderMemoryGame();
+                                    }, 1000);
+                                }
+                            }
+                        }
+                    });
+                    
+                    grid.appendChild(cardEl);
+                });
+            }
+
+            renderMemoryGame();
+        }
+
+        function endMemoryGame(moves) {
+            const timeTaken = Math.round((Date.now() - gameStartTime) / 1000);
+            const score = Math.max(0, 1000 - (moves * 10) - timeTaken);
+
+            document.getElementById('minigamesContent').innerHTML = `
+                <div class="game-container">
+                    <div style="font-size: 5rem; margin-bottom: 1rem;">🏆</div>
+                    <h2>Memory terminé !</h2>
+                    <div class="game-stats">
+                        <div class="game-stat">
+                            <div class="game-stat-value">${score}</div>
+                            <div class="game-stat-label">Score</div>
+                        </div>
+                        <div class="game-stat">
+                            <div class="game-stat-value">${moves}</div>
+                            <div class="game-stat-label">Coups</div>
+                        </div>
+                        <div class="game-stat">
+                            <div class="game-stat-value">${timeTaken}s</div>
+                            <div class="game-stat-label">Temps</div>
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 2rem;">
+                        <button class="btn-primary" onclick="startMemoryGame()">🔄 Rejouer</button>
+                        <button class="btn-secondary" onclick="closeMinigamesModal()">Fermer</button>
+                    </div>
+                </div>
+            `;
+        }
+
+        // TYPING GAME
+        function startTypingGame() {
+            currentGame = 'typing';
+            gameScore = 0;
+            currentQuestionIndex = 0;
+            gameStartTime = Date.now();
+            
+            gameQuestions = [...cards].sort(() => Math.random() - 0.5).slice(0, Math.min(10, cards.length));
+            
+            renderTypingQuestion();
+        }
+
+        function renderTypingQuestion() {
+            if (currentQuestionIndex >= gameQuestions.length) {
+                endTypingGame();
+                return;
+            }
+
+            const card = gameQuestions[currentQuestionIndex];
+
+            document.getElementById('minigamesContent').innerHTML = `
+                <div class="game-container">
+                    <h2>⌨️ Speed Typing - ${currentQuestionIndex + 1}/${gameQuestions.length}</h2>
+                    <div class="game-area">
+                        <div class="game-question">${card.front}</div>
+                        <input type="text" class="typing-input" id="typingInput" placeholder="Tape ta réponse..." autocomplete="off">
+                        <button class="btn-primary" style="margin-top: 1rem;" onclick="checkTypingAnswer()">Valider</button>
+                    </div>
+                    <div class="game-stats">
+                        <div class="game-stat">
+                            <div class="game-stat-value">${gameScore}</div>
+                            <div class="game-stat-label">Score</div>
+                        </div>
+                    </div>
+                    <button class="btn-secondary" style="margin-top: 1rem;" onclick="closeMinigamesModal()">Quitter</button>
+                </div>
+            `;
+
+            document.getElementById('typingInput').focus();
+            document.getElementById('typingInput').addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') checkTypingAnswer();
+            });
+        }
+
+        function checkTypingAnswer() {
+            const input = document.getElementById('typingInput').value.trim().toLowerCase();
+            const correct = gameQuestions[currentQuestionIndex].back.toLowerCase();
+
+            if (input === correct) {
+                gameScore += 10;
+                showAlert('Correct !', '✅ Bonne réponse !', true);
+            } else {
+                showAlert('Incorrect', `❌ La bonne réponse était : ${gameQuestions[currentQuestionIndex].back}`);
+            }
+
+            setTimeout(() => {
+                currentQuestionIndex++;
+                renderTypingQuestion();
+            }, 1500);
+        }
+
+        function endTypingGame() {
+            const timeTaken = Math.round((Date.now() - gameStartTime) / 1000);
+            const percentage = Math.round((gameScore / (gameQuestions.length * 10)) * 100);
+
+            document.getElementById('minigamesContent').innerHTML = `
+                <div class="game-container">
+                    <div style="font-size: 5rem; margin-bottom: 1rem;">⚡</div>
+                    <h2>Speed Typing terminé !</h2>
+                    <div class="game-stats">
+                        <div class="game-stat">
+                            <div class="game-stat-value">${gameScore}</div>
+                            <div class="game-stat-label">Score</div>
+                        </div>
+                        <div class="game-stat">
+                            <div class="game-stat-value">${percentage}%</div>
+                            <div class="game-stat-label">Réussite</div>
+                        </div>
+                        <div class="game-stat">
+                            <div class="game-stat-value">${timeTaken}s</div>
+                            <div class="game-stat-label">Temps</div>
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 2rem;">
+                        <button class="btn-primary" onclick="startTypingGame()">🔄 Rejouer</button>
+                        <button class="btn-secondary" onclick="closeMinigamesModal()">Fermer</button>
+                    </div>
+                </div>
+            `;
+        }
+
+        // TRUE/FALSE GAME
+        function startTrueFalseGame() {
+            currentGame = 'truefalse';
+            gameScore = 0;
+            currentQuestionIndex = 0;
+            gameStartTime = Date.now();
+            
+            gameQuestions = [...cards].sort(() => Math.random() - 0.5).slice(0, Math.min(10, cards.length));
+            
+            renderTrueFalseQuestion();
+        }
+
+        function renderTrueFalseQuestion() {
+            if (currentQuestionIndex >= gameQuestions.length) {
+                endTrueFalseGame();
+                return;
+            }
+
+            const card = gameQuestions[currentQuestionIndex];
+            const isTrue = Math.random() > 0.5;
+            const displayedAnswer = isTrue ? card.back : cards.filter(c => c.id !== card.id)[Math.floor(Math.random() * (cards.length - 1))].back;
+
+            document.getElementById('minigamesContent').innerHTML = `
+                <div class="game-container">
+                    <h2>✅❌ Vrai ou Faux - ${currentQuestionIndex + 1}/${gameQuestions.length}</h2>
+                    <div class="game-area">
+                        <div class="game-question">${card.front}</div>
+                        <div style="font-size: 1.5rem; margin: 2rem 0; padding: 1.5rem; background: linear-gradient(135deg, rgba(255, 107, 157, 0.1), rgba(192, 132, 252, 0.1)); border-radius: 16px;">
+                            ${displayedAnswer}
+                        </div>
+                        <div style="display: flex; gap: 1rem; justify-content: center;">
+                            <button class="btn-success" style="font-size: 1.2rem; padding: 1.5rem 3rem;" onclick="checkTrueFalse(${isTrue}, true)">✅ VRAI</button>
+                            <button class="btn-danger" style="font-size: 1.2rem; padding: 1.5rem 3rem;" onclick="checkTrueFalse(${isTrue}, false)">❌ FAUX</button>
+                        </div>
+                    </div>
+                    <div class="game-stats">
+                        <div class="game-stat">
+                            <div class="game-stat-value">${gameScore}</div>
+                            <div class="game-stat-label">Score</div>
+                        </div>
+                    </div>
+                    <button class="btn-secondary" style="margin-top: 1rem;" onclick="closeMinigamesModal()">Quitter</button>
+                </div>
+            `;
+        }
+
+        function checkTrueFalse(isTrue, userAnswer) {
+            const correct = isTrue === userAnswer;
+            
+            if (correct) {
+                gameScore += 10;
+                showAlert('Correct !', '✅ Bonne réponse !', true);
+            } else {
+                showAlert('Incorrect', '❌ Mauvaise réponse !');
+            }
+
+            setTimeout(() => {
+                currentQuestionIndex++;
+                renderTrueFalseQuestion();
+            }, 1500);
+        }
+
+        function endTrueFalseGame() {
+            const timeTaken = Math.round((Date.now() - gameStartTime) / 1000);
+            const percentage = Math.round((gameScore / (gameQuestions.length * 10)) * 100);
+
+            document.getElementById('minigamesContent').innerHTML = `
+                <div class="game-container">
+                    <div style="font-size: 5rem; margin-bottom: 1rem;">
+                        ${percentage === 100 ? '🏆' : percentage >= 70 ? '🎉' : '💪'}
+                    </div>
+                    <h2>Vrai ou Faux terminé !</h2>
+                    <div class="game-stats">
+                        <div class="game-stat">
+                            <div class="game-stat-value">${gameScore}</div>
+                            <div class="game-stat-label">Score</div>
+                        </div>
+                        <div class="game-stat">
+                            <div class="game-stat-value">${percentage}%</div>
+                            <div class="game-stat-label">Réussite</div>
+                        </div>
+                        <div class="game-stat">
+                            <div class="game-stat-value">${timeTaken}s</div>
+                            <div class="game-stat-label">Temps</div>
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 2rem;">
+                        <button class="btn-primary" onclick="startTrueFalseGame()">🔄 Rejouer</button>
+                        <button class="btn-secondary" onclick="closeMinigamesModal()">Fermer</button>
+                    </div>
+                </div>
+            `;
+        }
+
+        // ============================================================================
+        // IMPORT/EXPORT
+        // ============================================================================
+        
+        document.getElementById('exportBtn').addEventListener('click', () => {
+            const data = {
+                cards,
+                decks,
+                stats: studyStats,
+                history: studyHistory,
+                goal: dailyGoal,
+                achievements: achievements,
+                categoryBadges: categoryBadges,
+                exportDate: new Date().toISOString()
+            };
+            
+            const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `vocabboost-pro-export-${new Date().toISOString().split('T')[0]}.json`;
+            a.click();
+            URL.revokeObjectURL(url);
+            
+            showAlert('Succès', 'Données exportées !', true);
+        });
+
+        document.getElementById('importBtn').addEventListener('click', () => {
+            document.getElementById('importFile').click();
+        });
+
+        document.getElementById('importAddBtn').addEventListener('click', () => {
+            document.getElementById('importAddFile').click();
+        });
+
+        document.getElementById('importFile').addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            if (!file) return;
+            
+            const reader = new FileReader();
+            reader.onload = (event) => {
+                try {
+                    const data = JSON.parse(event.target.result);
+                    
+                    if (confirm('⚠️ REMPLACER toutes les données actuelles ?\n\nToutes tes cartes existantes seront SUPPRIMÉES !')) {
+                        cards = (data.cards || []).map(validateCard).filter(Boolean);
+                        decks = data.decks || ['Général'];
+                        studyStats = data.stats || { today: 0, total: 0, last7Days: [0,0,0,0,0,0,0], streak: 0, lastStudyDate: null };
+                        studyHistory = data.history || {};
+                        dailyGoal = data.goal || 20;
+                        if (data.achievements) {
+                            data.achievements.forEach(a => {
+                                const achievement = achievements.find(ac => ac.id === a.id);
+                                if (achievement) achievement.progress = a.progress;
+                            });
+                        }
+                        if (data.categoryBadges) {
+                            categoryBadges = data.categoryBadges;
+                        }
+                        
+                        saveData();
+                        updateAllViews();
+                        showAlert('Succès', `Import réussi ! ${cards.length} cartes au total`, true);
+                    }
+                } catch (err) {
+                    console.error('Import error:', err);
+                    showAlert('Erreur', 'Fichier invalide ou corrompu');
+                }
+                e.target.value = '';
+            };
+            reader.readAsText(file);
+        });
+
+        document.getElementById('importAddFile').addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            if (!file) return;
+            
+            const reader = new FileReader();
+            reader.onload = (event) => {
+                try {
+                    const data = JSON.parse(event.target.result);
+                    const newCards = (data.cards || []).map(validateCard).filter(Boolean);
+                    
+                    if (newCards.length === 0) {
+                        showAlert('Attention', 'Aucune carte valide dans le fichier');
+                        e.target.value = '';
+                        return;
+                    }
+                    
+                    let addedCount = 0;
+                    let duplicateCount = 0;
+                    let newDecksAdded = [];
+                    
+                    newCards.forEach(newCard => {
+                        const isDuplicate = cards.some(existingCard => 
+                            existingCard.front.toLowerCase().trim() === newCard.front.toLowerCase().trim() &&
+                            existingCard.back.toLowerCase().trim() === newCard.back.toLowerCase().trim() &&
+                            existingCard.deck === newCard.deck
+                        );
+                        
+                        if (!isDuplicate) {
+                            newCard.id = Date.now().toString() + Math.random().toString(36).substr(2, 9);
+                            cards.push(newCard);
+                            addedCount++;
+                            
+                            if (!decks.includes(newCard.deck)) {
+                                decks.push(newCard.deck);
+                                if (!newDecksAdded.includes(newCard.deck)) {
+                                    newDecksAdded.push(newCard.deck);
+                                }
+                            }
+                        } else {
+                            duplicateCount++;
+                        }
+                    });
+                    
+                    if (addedCount > 0) {
+                        updateAchievements();
+                        saveData();
+                        updateAllViews();
+                        
+                        let message = `✅ ${addedCount} carte(s) ajoutée(s) !`;
+                        if (duplicateCount > 0) {
+                            message += `\n🔄 ${duplicateCount} doublon(s) ignoré(s)`;
+                        }
+                        if (newDecksAdded.length > 0) {
+                            message += `\n📚 Nouveau(x) deck(s) : ${newDecksAdded.join(', ')}`;
+                        }
+                        message += `\n\n📊 Total : ${cards.length} cartes`;
+                        
+                        showAlert('Import réussi', message, true);
+                    } else {
+                        showAlert('Info', `Aucune carte ajoutée - ${duplicateCount} doublon(s) détecté(s)`);
+                    }
+                } catch (err) {
+                    console.error('Import add error:', err);
+                    showAlert('Erreur', 'Fichier invalide ou corrompu');
+                }
+                e.target.value = '';
+            };
+            reader.readAsText(file);
+        });
+
+        document.getElementById('resetBtn').addEventListener('click', () => {
+            const currentAnki = ankis.find(a => a.id === currentAnkiId);
+            const ankiName = currentAnki ? currentAnki.name : 'cet Anki';
+            
+            if (confirm(`⚠️ Supprimer TOUTES les cartes de "${ankiName}" ?\n\nCela ne supprimera que les cartes de cet Anki, pas des autres !`)) {
+                if (confirm('Dernière confirmation ?')) {
+                    // Supprimer uniquement les données de l'Anki actuel
+                    cards = [];
+                    decks = ['Général'];
+                    studyStats = { today: 0, total: 0, last7Days: [0,0,0,0,0,0,0], streak: 0, lastStudyDate: null };
+                    studyHistory = {};
+                    dailyGoal = 20;
+                    achievements.forEach(a => a.progress = 0);
+                    categoryBadges = {};
+                    
+                    saveData();
+                    updateAllViews();
+                    showAlert('Succès', `Toutes les cartes de "${ankiName}" ont été supprimées`, true);
+                }
+            }
+        });
+
+        // ============================================================================
+        // INIT
+        // ============================================================================
+        
+        loadAnkis();
+        
+        // Rotate last7Days at midnight
+        const now = new Date();
+        const midnight = new Date(now);
+        midnight.setHours(24, 0, 0, 0);
+        const msUntilMidnight = midnight - now;
+        
+        setTimeout(() => {
+            studyStats.last7Days.shift();
+            studyStats.last7Days.push(0);
+            studyStats.today = 0;
+            saveData();
+            updateAllViews();
+            
+            setInterval(() => {
+                studyStats.last7Days.shift();
+                studyStats.last7Days.push(0);
+                studyStats.today = 0;
+                saveData();
+                updateAllViews();
+            }, 86400000);
+        }, msUntilMidnight);
+        
+        function updateDeckSelects() {
+            const deckSelect = document.getElementById('cardDeck');
+            const editDeckSelect = document.getElementById('editCardDeck');
+            
+            if (deckSelect) {
+                deckSelect.innerHTML = decks.map(d => `<option value="${d}">${d}</option>`).join('');
+            }
+            if (editDeckSelect) {
+                editDeckSelect.innerHTML = decks.map(d => `<option value="${d}">${d}</option>`).join('');
+            }
+        }
+        updateDeckSelects();
+        
+        updateAllViews();
+        updateDashboard();
+        
+        console.log('🚀 VocabBoost PRO - Version Finale chargée !');
+    </script>
+</body>
+</html>
